@@ -16,33 +16,33 @@ final class ItemTest extends TestCase
     /** @test */
     public function it_may_have_a_uid()
     {
-        $this->item->uid('desktop');
+        $this->item->uid('a uid');
 
-        $this->assertTrue(true);
+        $this->assertSame(['uid' => 'a uid'], $this->item->toArray());
     }
 
     /** @test */
     public function it_may_have_a_title()
     {
-        $this->item->title('Desktop');
+        $this->item->title('some title');
 
-        $this->assertTrue(true);
+        $this->assertSame(['title' => 'some title'], $this->item->toArray());
     }
 
     /** @test */
     public function it_may_have_a_subtitle()
     {
-        $this->item->subtitle('~/Desktop');
+        $this->item->subtitle('the subtitle');
 
-        $this->assertTrue(true);
+        $this->assertSame(['subtitle' => 'the subtitle'], $this->item->toArray());
     }
 
     /** @test */
     public function it_may_have_an_arg()
     {
-        $this->item->arg('~/Desktop');
+        $this->item->arg('argument');
 
-        $this->assertTrue(true);
+        $this->assertSame(['arg' => 'argument'], $this->item->toArray());
     }
 
     /** @test */
@@ -52,29 +52,45 @@ final class ItemTest extends TestCase
     }
 
     /** @test */
-    public function it_may_have_be_valid_or_not()
+    public function it_may_be_valid()
     {
         $this->item->valid();
+
+        $this->assertSame(['valid' => true], $this->item->toArray());
+
+
+        $this->item->valid('slfj');
+
+        $this->assertSame(['valid' => true], $this->item->toArray());
+
+
         $this->item->valid(true);
+
+        $this->assertSame(['valid' => true], $this->item->toArray());
+    }
+
+    /** @test */
+    public function it_may_not_be_valid()
+    {
         $this->item->valid(false);
 
-        $this->assertTrue(true);
+        $this->assertSame(['valid' => false], $this->item->toArray());
     }
 
     /** @test */
     public function it_may_have_a_match_option()
     {
-        $this->item->match('my family photos');
+        $this->item->match('no fire without a match');
 
-        $this->assertTrue(true);
+        $this->assertSame(['match' => 'no fire without a match'], $this->item->toArray());
     }
 
     /** @test */
     public function it_may_have_autocomplete()
     {
-        $this->item->autocomplete('string');
+        $this->item->autocomplete('a complete auto');
 
-        $this->assertTrue(true);
+        $this->assertSame(['autocomplete' => 'a complete auto'], $this->item->toArray());
     }
 
     /** @test */
@@ -100,6 +116,6 @@ final class ItemTest extends TestCase
     {
         $this->item->quicklookurl('https://www.alfredapp.com/');
 
-        $this->assertTrue(true);
+        $this->assertSame(['quicklookurl' => 'https://www.alfredapp.com/'], $this->item->toArray());
     }
 }

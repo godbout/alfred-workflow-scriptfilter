@@ -19,7 +19,7 @@ class Item
 
     public function valid($validity = true)
     {
-        $this->fields['valid'] = $validity;
+        $this->fields['valid'] = (bool) $validity;
     }
 
     public function __call($name, $arguments)
@@ -31,5 +31,10 @@ class Item
         }
 
         throw new \Exception("'$name' is not a valid ScriptFilter item field.");
+    }
+
+    public function toArray()
+    {
+        return $this->fields;
     }
 }
