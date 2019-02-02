@@ -2,7 +2,9 @@
 
 namespace App;
 
-class Results
+use App\Item;
+
+class ScriptFilter
 {
     private $items = [];
 
@@ -21,5 +23,14 @@ class Results
     public function items()
     {
         return $this->items['items'];
+    }
+
+    public function item()
+    {
+        $item = new Item;
+
+        $this->add($item);
+
+        return $item;
     }
 }
