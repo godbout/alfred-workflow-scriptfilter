@@ -4,7 +4,7 @@ namespace App;
 
 class Item
 {
-    const ALLOWEDFIELDS = [
+    const FIELDSALLOWED = [
         'uid',
         'title',
         'subtitle',
@@ -22,9 +22,19 @@ class Item
         $this->fields['valid'] = (bool) $validity;
     }
 
+    public function copy($text)
+    {
+        $this->fields['text']['copy'] = $text;
+    }
+
+    public function largetype($text)
+    {
+        $this->fields['text']['largetype'] = $text;
+    }
+
     public function __call($name, $arguments)
     {
-        if (in_array($name, self::ALLOWEDFIELDS)) {
+        if (in_array($name, self::FIELDSALLOWED)) {
             $this->fields[$name] = reset($arguments);
 
             return $this;
