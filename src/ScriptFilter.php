@@ -2,35 +2,101 @@
 
 namespace App;
 
-use App\Item;
+use App\Traits\HasVariables;
 
 class ScriptFilter
 {
-    private $items = [];
+    use HasVariables;
 
-    public function output()
+    private static $instance = null;
+
+    private static $rerun = null;
+
+    private static $items = [];
+
+    public static function getInstance()
     {
-        $items = ['items' => $this->items];
-
-        return json_encode($items);
+        return self::create();
     }
 
-    public function add(Item $item)
+    public static function create()
     {
-        $this->items['items'][] = json_encode($item);
+        if (self::$instance === null) {
+            self::$instance = new ScriptFilter();
+        }
+
+        return self::$instance;
     }
 
-    public function items()
+    public static function rerun($seconds = null)
     {
-        return $this->items['items'];
+        if ($seconds >= 0.1 && $seconds <= 5.0) {
+            self::$rerun = $seconds;
+        }
+
+        return self::$instance;
     }
 
-    public function item()
+    public function item(Item $item)
     {
-        $item = new Item;
+        self::add($item);
 
-        $this->add($item);
+        return $this;
+    }
 
-        return $item;
+    public function items(Item ...$items)
+    {
+        self::add(...$items);
+
+        return $this;
+    }
+
+    public static function add(...$objects)
+    {
+        foreach ($objects as $object) {
+            if ($object instanceof Variable) {
+                self::getInstance()->variable($object);
+            }
+
+            if ($object instanceof Item) {
+                self::$items[] = $object;
+            }
+        }
+
+        return self::$instance;
+    }
+
+    public static function output()
+    {
+        if (self::$rerun !== null) {
+            $output['rerun'] = self::$rerun;
+        }
+
+        if (self::getInstance()->variables !== null) {
+            $output['variables'] = self::getInstance()->variables;
+        }
+
+        $output['items'] = array_map(function ($item) {
+            return $item->toArray();
+        }, self::$items);
+
+        return json_encode($output);
+    }
+
+    public static function reset()
+    {
+        self::$rerun = null;
+        self::getInstance()->variables = null;
+        self::$items = [];
+
+        return self::$instance;
+    }
+
+    public static function destroy()
+    {
+        self::reset();
+        self::$instance = null;
+
+        return self::$instance;
     }
 }

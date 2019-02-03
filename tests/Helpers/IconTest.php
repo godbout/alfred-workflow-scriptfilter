@@ -1,0 +1,50 @@
+<?php
+
+namespace Tests\Helpers;
+
+use App\Icon;
+use PHPUnit\Framework\TestCase;
+
+final class FluentApiIconTest extends TestCase
+{
+    /** @test */
+    public function a_path_may_be_added_through_a_fluent_api()
+    {
+        $icon = Icon::create()
+            ->path('chemin');
+
+        $output = [
+            'path' => 'chemin',
+        ];
+
+        $this->assertSame($output, $icon->toArray());
+    }
+
+    /** @test */
+    public function a_fileicon_type_may_be_added_through_a_fluent_api()
+    {
+        $icon = Icon::create('www.web')
+            ->fileicon();
+
+        $output = [
+            'path' => 'www.web',
+            'type' => 'fileicon'
+        ];
+
+        $this->assertSame($output, $icon->toArray());
+    }
+
+    /** @test */
+    public function a_filetype_may_be_added_through_a_fluent_api()
+    {
+        $icon = Icon::create('$PATH')
+            ->filetype();
+
+        $output = [
+            'path' => '$PATH',
+            'type' => 'filetype'
+        ];
+
+        $this->assertSame($output, $icon->toArray());
+    }
+}

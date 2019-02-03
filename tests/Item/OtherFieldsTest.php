@@ -1,18 +1,19 @@
 <?php
 
-namespace Tests\Unit;
+namespace Tests\Item;
 
 use App\Item;
 use PHPUnit\Framework\TestCase;
 
-final class ItemTest extends TestCase
+final class ItemOtherFieldsTest extends TestCase
 {
     public function setUp()
     {
         parent::setUp();
 
-        $this->item = new Item();
+        $this->item = Item::create();
     }
+
     /** @test */
     public function it_may_have_a_uid()
     {
@@ -43,12 +44,6 @@ final class ItemTest extends TestCase
         $this->item->arg('argument');
 
         $this->assertSame(['arg' => 'argument'], $this->item->toArray());
-    }
-
-    /** @test */
-    public function it_may_have_an_icon()
-    {
-        $this->markTestIncomplete();
     }
 
     /** @test */
@@ -91,40 +86,6 @@ final class ItemTest extends TestCase
         $this->item->autocomplete('a complete auto');
 
         $this->assertSame(['autocomplete' => 'a complete auto'], $this->item->toArray());
-    }
-
-    /** @test */
-    public function it_may_have_a_type()
-    {
-        $this->markTestIncomplete();
-    }
-
-    /** @test */
-    public function it_may_have_mods()
-    {
-        $this->markTestIncomplete();
-    }
-
-    /** @test */
-    public function it_may_have_a_copy_option()
-    {
-        $this->item->copy('within text');
-
-        $this->assertSame(['text' => ['copy' => 'within text']], $this->item->toArray());
-    }
-
-    /** @test */
-    public function it_may_have_a_largetype_option()
-    {
-        $this->item->largetype('that IS large');
-
-        $this->assertSame(['text' => ['largetype' => 'that IS large']], $this->item->toArray());
-    }
-
-    /** @test */
-    public function it_may_have_a_text_option()
-    {
-        $this->markTestIncomplete();
     }
 
     /** @test */
