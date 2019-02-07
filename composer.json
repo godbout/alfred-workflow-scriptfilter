@@ -2,8 +2,9 @@
     "name": "godbout/alfred-workflow-php",
     "description": "Makes it easy and fun to build Alfred 3 Workflows in PHP.",
     "keywords": [
-        "godbout",
-        "alfred-workflow-php"
+        "alfred",
+        "workflow",
+        "php"
     ],
     "homepage": "https://github.com/godbout/alfred-workflow-php",
     "license": "MIT",
