@@ -2,9 +2,9 @@
 
 namespace Tests\Item;
 
-use App\Icon;
-use App\Item;
-use App\Variable;
+use Godbout\Alfred\Icon;
+use Godbout\Alfred\Item;
+use Godbout\Alfred\Variable;
 use PHPUnit\Framework\TestCase;
 
 final class ItemVariableTest extends TestCase

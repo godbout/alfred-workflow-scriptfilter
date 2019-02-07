@@ -2,9 +2,9 @@
 
 namespace Tests;
 
-use App\Icon;
-use App\Variable;
-use App\Mods\Ctrl;
+use Godbout\Alfred\Icon;
+use Godbout\Alfred\Variable;
+use Godbout\Alfred\Mods\Ctrl;
 use PHPUnit\Framework\TestCase;
 
 final class ModTest extends TestCase

@@ -1,16 +1,16 @@
 <?php
 
-namespace App;
+namespace Godbout\Alfred;
 
-use App\Mods\Fn;
-use App\Mods\Alt;
-use App\Mods\Cmd;
-use App\Mods\Mod;
-use App\Mods\Ctrl;
-use App\Mods\Shift;
 use ReflectionClass;
-use App\Traits\HasIcon;
-use App\Traits\HasVariables;
+use Godbout\Alfred\Mods\Fn;
+use Godbout\Alfred\Mods\Alt;
+use Godbout\Alfred\Mods\Cmd;
+use Godbout\Alfred\Mods\Mod;
+use Godbout\Alfred\Mods\Ctrl;
+use Godbout\Alfred\Mods\Shift;
+use Godbout\Alfred\Traits\HasIcon;
+use Godbout\Alfred\Traits\HasVariables;
 
 class Item
 {

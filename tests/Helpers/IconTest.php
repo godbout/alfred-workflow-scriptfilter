@@ -2,7 +2,7 @@
 
 namespace Tests\Helpers;
 
-use App\Icon;
+use Godbout\Alfred\Icon;
 use PHPUnit\Framework\TestCase;
 
 final class FluentApiIconTest extends TestCase

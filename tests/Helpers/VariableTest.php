@@ -2,7 +2,7 @@
 
 namespace Tests\Helpers;
 
-use App\Variable;
+use Godbout\Alfred\Variable;
 use PHPUnit\Framework\TestCase;
 
 final class FluentApiVariableTest extends TestCase

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Traits;
+namespace Godbout\Alfred\Traits;
 
-use App\Icon;
+use Godbout\Alfred\Icon;
 
 trait HasIcon
 {

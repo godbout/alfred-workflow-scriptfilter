@@ -2,12 +2,12 @@
 
 namespace Tests\Item;
 
-use App\Item;
-use App\Mods\Fn;
-use App\Mods\Alt;
-use App\Mods\Cmd;
-use App\Mods\Ctrl;
-use App\Mods\Shift;
+use Godbout\Alfred\Item;
+use Godbout\Alfred\Mods\Fn;
+use Godbout\Alfred\Mods\Alt;
+use Godbout\Alfred\Mods\Cmd;
+use Godbout\Alfred\Mods\Ctrl;
+use Godbout\Alfred\Mods\Shift;
 use PHPUnit\Framework\TestCase;
 
 final class ItemModsTest extends TestCase

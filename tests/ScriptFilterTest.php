@@ -2,14 +2,14 @@
 
 namespace Tests;
 
-use App\Icon;
-use App\Item;
-use App\Mods\Alt;
-use App\Mods\Ctrl;
-use App\Mods\Fn;
-use App\Mods\Shift;
-use App\ScriptFilter;
-use App\Variable;
+use Godbout\Alfred\Icon;
+use Godbout\Alfred\Item;
+use Godbout\Alfred\Mods\Alt;
+use Godbout\Alfred\Mods\Ctrl;
+use Godbout\Alfred\Mods\Fn;
+use Godbout\Alfred\Mods\Shift;
+use Godbout\Alfred\ScriptFilter;
+use Godbout\Alfred\Variable;
 use PHPUnit\Framework\TestCase;
 
 final class ScriptFilterTest extends TestCase

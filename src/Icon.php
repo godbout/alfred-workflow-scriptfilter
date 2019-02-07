@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Godbout\Alfred;
 
 class Icon
 {

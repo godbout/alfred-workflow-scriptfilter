@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Traits;
+namespace Godbout\Alfred\Traits;
 
-use App\Variable;
+use Godbout\Alfred\Variable;
 
 trait HasVariables
 {

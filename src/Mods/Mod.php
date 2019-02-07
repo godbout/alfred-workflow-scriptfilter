@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Mods;
+namespace Godbout\Alfred\Mods;
 
-use App\Traits\HasIcon;
-use App\Traits\HasVariables;
+use Godbout\Alfred\Traits\HasIcon;
+use Godbout\Alfred\Traits\HasVariables;
 
 abstract class Mod
 {

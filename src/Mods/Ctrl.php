@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Mods;
+namespace Godbout\Alfred\Mods;
 
 class Ctrl extends Mod
 {

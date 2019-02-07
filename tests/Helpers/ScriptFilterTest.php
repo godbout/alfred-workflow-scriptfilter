@@ -2,14 +2,14 @@
 
 namespace Tests\Helpers;
 
-use App\Icon;
-use App\Item;
-use App\Mods\Fn;
-use App\Mods\Alt;
-use App\Variable;
-use App\Mods\Ctrl;
-use App\Mods\Shift;
-use App\ScriptFilter;
+use Godbout\Alfred\Icon;
+use Godbout\Alfred\Item;
+use Godbout\Alfred\Mods\Fn;
+use Godbout\Alfred\Mods\Alt;
+use Godbout\Alfred\Variable;
+use Godbout\Alfred\Mods\Ctrl;
+use Godbout\Alfred\Mods\Shift;
+use Godbout\Alfred\ScriptFilter;
 use PHPUnit\Framework\TestCase;
 
 final class FluentApiScriptFilterTest extends TestCase

@@ -2,7 +2,7 @@
 
 namespace Tests\Item;
 
-use App\Item;
+use Godbout\Alfred\Item;
 use PHPUnit\Framework\TestCase;
 
 final class ItemTextTest extends TestCase

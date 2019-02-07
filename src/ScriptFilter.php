@@ -1,8 +1,8 @@
 <?php
 
-namespace App;
+namespace Godbout\Alfred;
 
-use App\Traits\HasVariables;
+use Godbout\Alfred\Traits\HasVariables;
 
 class ScriptFilter
 {

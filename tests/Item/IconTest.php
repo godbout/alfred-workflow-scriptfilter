@@ -2,8 +2,8 @@
 
 namespace Tests\Item;
 
-use App\Icon;
-use App\Item;
+use Godbout\Alfred\Icon;
+use Godbout\Alfred\Item;
 use PHPUnit\Framework\TestCase;
 
 final class ItemIconTest extends TestCase
