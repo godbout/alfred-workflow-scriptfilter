@@ -23,16 +23,28 @@ composer require godbout/alfred-workflow-php
 
 ## Usage
 
-There is only one script filter by... script, so the `ScriptFilter` class is a singleton. You can create many
+The main `ScriptFilter` class is a singleton. You can create many
 instances of all the other classes: `Item`, `Variable`, `Icon`, and the `Mod` classes: `Ctrl`, `Fn`, `Shift`, `Alt`, and `Cmd`.
 
 You may check the structure and options of the Alfred Script Filter JSON Format here: https://www.alfredapp.com/help/workflows/inputs/script-filter/json/
 
 ```php
-use Godbout/ScriptFilter;
+use Godbout\Alfred\ScriptFilter;
 
 ScriptFilter::create();
 
+echo ScriptFilter::output();
+```
+
+will result in:
+
+```json
+{"items":[]}
+```
+
+You can add items, variables, rerun automatically your script:
+
+```php
 ScriptFilter::add(
     Item::create()
         ->uid('uidd')
@@ -98,7 +110,7 @@ echo ScriptFilter::output();
 
 will result in:
 
-```
+```json
 {
     "rerun":4.5,
     "variables":{
@@ -169,7 +181,7 @@ will result in:
 
 ## Helpers
 
-There's a couple of helpers that should make your code a bit more enjoyable to write. Or not.
+There's a couple of helpers that should make your code a bit more enjoyable to write. (Or not.)
 
 ### ScriptFilter
 
@@ -178,50 +190,71 @@ The ScriptFilter can be written using a fluent interface:
 ```php
 ScriptFilter::create()
     ->item($item)
-    ->variable($variable)
+    ->variable(Variable::create('gender', 'undefined'))
     ->items($anotherItem, $oneMoreItem)
     ->variables($aVariable, $anotherVariable)
-    ->rerun(4);
+    ->rerun(4)
+    ->item(Item::create());
+```
+
+### Item
+
+```php
+Item::createDefault();
+// same same
+Item::create()->default();
+// same same
+Item::create()->type('default');
+
+
+Item::createFile();
+// same same
+Item::create()->file();
+// same same
+Item::create()->type('file');
+
+
+Item::createSkipcheck();
+// same same
+Item::create()->skipcheck();
+// same same
+Item::create()->type('file:skipcheck');
+
+
+Item::create()->copy('text to copy');
+// same same
+Item::create()->text('copy', 'text to copy');
+
+
+Item::create()->largetype('show large');
+// same same
+Item::create()->text('largetype', 'show large');
 ```
 
 ### Icon
 
 ```php
 Icon::create('~/Desktop');
-/**
- * is the same as
- */
-Icon::create()
-    ->path('~/Desktop');
+// same same
+Icon::create()->path('~/Desktop');
 
 
 Icon::createFileicon('~/Desktop');
-/**
- * is the same as
- */
-Icon::create('~/Desktop')
-    ->fileicon();
+// same same
+Icon::create('~/Desktop')->fileicon();
 
 
 Icon::createFiletype('~/Desktop');
-/**
- * is the same as
- */
-Icon::create()
-    ->path('~/Desktop')
-    ->filetype();
+// same same
+Icon::create()->path('~/Desktop')->filetype();
 ```
 
 ### Variable
 
 ```php
 Variable::create('guitar', 'fender');
-/**
- * is the same as
- */
-Variable::create()
-    ->name('guitar')
-    ->value('fender');
+// same same
+Variable::create()->name('guitar')->value('fender');
 ```
 
 ## Full API
