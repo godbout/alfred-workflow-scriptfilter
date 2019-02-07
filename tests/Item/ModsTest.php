@@ -10,7 +10,7 @@ use Godbout\Alfred\Mods\Ctrl;
 use Godbout\Alfred\Mods\Shift;
 use PHPUnit\Framework\TestCase;
 
-final class ItemModsTest extends TestCase
+final class ModsTest extends TestCase
 {
     public function setUp()
     {
@@ -42,7 +42,7 @@ final class ItemModsTest extends TestCase
                     'subtitle' => 'a nice sub',
                     'valid' => true,
                 ],
-            ]
+            ],
         ];
 
         $this->assertSame($output, $this->item->toArray());
@@ -68,7 +68,7 @@ final class ItemModsTest extends TestCase
                 'ctrl' => [
                     'subtitle' => 'undertitle',
                 ],
-            ]
+            ],
         ];
 
         $this->assertSame($output, $this->item->toArray());
@@ -107,7 +107,7 @@ final class ItemModsTest extends TestCase
                 'cmd' => [
                     'arg' => 'cmd',
                 ],
-            ]
+            ],
         ];
 
         $this->assertSame($output, $this->item->toArray());

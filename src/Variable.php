@@ -16,7 +16,7 @@ class Variable
 
     public static function create($name = null, $value = null)
     {
-        return new Variable($name, $value);
+        return new self($name, $value);
     }
 
     public function __call($name, $arguments)

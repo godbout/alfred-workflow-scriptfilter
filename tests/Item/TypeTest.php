@@ -5,7 +5,7 @@ namespace Tests\Item;
 use Godbout\Alfred\Item;
 use PHPUnit\Framework\TestCase;
 
-final class ItemTypeTest extends TestCase
+final class TypeTest extends TestCase
 {
     /** @test */
     public function it_may_have_a_type_value_of_default()

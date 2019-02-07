@@ -5,7 +5,7 @@ namespace Tests\Item;
 use Godbout\Alfred\Item;
 use PHPUnit\Framework\TestCase;
 
-final class ItemTextTest extends TestCase
+final class TextTest extends TestCase
 {
     public function setUp()
     {
@@ -36,16 +36,13 @@ final class ItemTextTest extends TestCase
 
         $this->assertSame([], $this->item->toArray());
 
-
         $this->item->text('copy', 'text to copy');
 
         $this->assertSame(['text' => ['copy' => 'text to copy']], $this->item->toArray());
 
-
         $this->item->text('largetype', 'yeah baby');
 
         $this->assertSame(['text' => ['copy' => 'text to copy', 'largetype' => 'yeah baby']], $this->item->toArray());
-
 
         $this->item->text('copy', 'another text');
 

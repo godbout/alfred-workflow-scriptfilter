@@ -6,7 +6,7 @@ use Godbout\Alfred\Icon;
 use Godbout\Alfred\Item;
 use PHPUnit\Framework\TestCase;
 
-final class ItemIconTest extends TestCase
+final class IconTest extends TestCase
 {
     public function setUp()
     {

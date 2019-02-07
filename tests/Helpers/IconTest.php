@@ -5,7 +5,7 @@ namespace Tests\Helpers;
 use Godbout\Alfred\Icon;
 use PHPUnit\Framework\TestCase;
 
-final class FluentApiIconTest extends TestCase
+final class IconTest extends TestCase
 {
     /** @test */
     public function a_path_may_be_added_through_a_fluent_api()
@@ -28,7 +28,7 @@ final class FluentApiIconTest extends TestCase
 
         $output = [
             'path' => 'www.web',
-            'type' => 'fileicon'
+            'type' => 'fileicon',
         ];
 
         $this->assertSame($output, $icon->toArray());
@@ -42,7 +42,7 @@ final class FluentApiIconTest extends TestCase
 
         $output = [
             'path' => '$PATH',
-            'type' => 'filetype'
+            'type' => 'filetype',
         ];
 
         $this->assertSame($output, $icon->toArray());

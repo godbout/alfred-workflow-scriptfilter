@@ -24,17 +24,17 @@ class Icon
 
     public static function create($path = null)
     {
-        return new Icon($path);
+        return new self($path);
     }
 
     public static function createFileicon($path = null)
     {
-        return new Icon($path, 'fileicon');
+        return new self($path, 'fileicon');
     }
 
     public static function createFiletype($path = null)
     {
-        return new Icon($path, 'filetype');
+        return new self($path, 'filetype');
     }
 
     public function path($path)
