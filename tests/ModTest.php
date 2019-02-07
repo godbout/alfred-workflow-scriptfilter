@@ -141,4 +141,12 @@ final class ModTest extends TestCase
 
         $this->assertSame($output, $this->mod->toArray());
     }
+
+    /** @test */
+    public function it_throws_an_exception_if_a_non_existing_method_call_is_made()
+    {
+        $this->expectException(\Exception::class);
+
+        $this->mod->bukowski();
+    }
 }

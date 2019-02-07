@@ -93,4 +93,12 @@ final class OtherFieldsTest extends TestCase
 
         $this->assertSame(['quicklookurl' => 'https://www.alfredapp.com/'], $this->item->toArray());
     }
+
+    /** @test */
+    public function it_throws_an_exception_if_a_non_existing_method_call_is_made()
+    {
+        $this->expectException(\Exception::class);
+
+        $this->item->bukowski();
+    }
 }
