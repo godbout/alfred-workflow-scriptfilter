@@ -22,7 +22,7 @@ final class IconTest extends TestCase
 
         $output = [
             'path' => 'C:/Windows/LOL',
-            'type' => 'fileicon'
+            'type' => 'fileicon',
         ];
 
         $this->assertSame($output, $icon->toArray());
@@ -33,13 +33,12 @@ final class IconTest extends TestCase
     {
         $output = [
             'path' => 'chemin',
-            'type' => 'filetype'
+            'type' => 'filetype',
         ];
 
         $icon = Icon::createFiletype('chemin');
 
         $this->assertSame($output, $icon->toArray());
-
 
         $icon = Icon::createFiletype()
             ->path('chemin');

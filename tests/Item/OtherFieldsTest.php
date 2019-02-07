@@ -5,7 +5,7 @@ namespace Tests\Item;
 use Godbout\Alfred\Item;
 use PHPUnit\Framework\TestCase;
 
-final class ItemOtherFieldsTest extends TestCase
+final class OtherFieldsTest extends TestCase
 {
     public function setUp()
     {
@@ -53,11 +53,9 @@ final class ItemOtherFieldsTest extends TestCase
 
         $this->assertSame(['valid' => true], $this->item->toArray());
 
-
         $this->item->valid('slfj');
 
         $this->assertSame(['valid' => true], $this->item->toArray());
-
 
         $this->item->valid(true);
 

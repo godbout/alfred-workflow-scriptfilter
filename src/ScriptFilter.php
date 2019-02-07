@@ -22,7 +22,7 @@ class ScriptFilter
     public static function create()
     {
         if (self::$instance === null) {
-            self::$instance = new ScriptFilter();
+            self::$instance = new self();
         }
 
         return self::$instance;

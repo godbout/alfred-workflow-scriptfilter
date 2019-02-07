@@ -5,7 +5,7 @@ namespace Tests\Helpers;
 use Godbout\Alfred\Variable;
 use PHPUnit\Framework\TestCase;
 
-final class FluentApiVariableTest extends TestCase
+final class VariableTest extends TestCase
 {
     /** @test */
     public function a_name_and_a_value_may_be_added_through_a_fluent_api()

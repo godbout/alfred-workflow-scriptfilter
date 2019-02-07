@@ -2,8 +2,8 @@
 
 namespace Tests;
 
-use Godbout\Alfred\ScriptFilter;
 use PHPUnit\Framework\TestCase;
+use Godbout\Alfred\ScriptFilter;
 
 final class ScriptFilterUnitTest extends TestCase
 {

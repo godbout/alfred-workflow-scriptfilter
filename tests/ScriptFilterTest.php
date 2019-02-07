@@ -4,13 +4,13 @@ namespace Tests;
 
 use Godbout\Alfred\Icon;
 use Godbout\Alfred\Item;
-use Godbout\Alfred\Mods\Alt;
-use Godbout\Alfred\Mods\Ctrl;
 use Godbout\Alfred\Mods\Fn;
-use Godbout\Alfred\Mods\Shift;
-use Godbout\Alfred\ScriptFilter;
+use Godbout\Alfred\Mods\Alt;
 use Godbout\Alfred\Variable;
+use Godbout\Alfred\Mods\Ctrl;
+use Godbout\Alfred\Mods\Shift;
 use PHPUnit\Framework\TestCase;
+use Godbout\Alfred\ScriptFilter;
 
 final class ScriptFilterTest extends TestCase
 {
@@ -44,7 +44,7 @@ final class ScriptFilterTest extends TestCase
         ScriptFilter::add($item);
 
         $output = ['items' => [
-            []
+            [],
         ]];
 
         $this->assertEquals(json_encode($output), ScriptFilter::output());
@@ -96,7 +96,7 @@ final class ScriptFilterTest extends TestCase
             [
                 'match' => 'fire',
                 'type' => 'file',
-                'text' => ['largetype' => 'huge letters']
+                'text' => ['largetype' => 'huge letters'],
             ],
         ]];
 
@@ -119,7 +119,7 @@ final class ScriptFilterTest extends TestCase
         $output = ['items' => [
             [
                 'uid' => '1234',
-                'title' => 'click'
+                'title' => 'click',
             ],
             [
                 'text' => ['largetype' => 'big big big letters'],
@@ -137,11 +137,9 @@ final class ScriptFilterTest extends TestCase
 
         $this->assertEquals(json_encode(['items' => []]), ScriptFilter::output());
 
-
         ScriptFilter::rerun(0);
 
         $this->assertEquals(json_encode(['items' => []]), ScriptFilter::output());
-
 
         ScriptFilter::rerun(3.4);
 
@@ -167,11 +165,11 @@ final class ScriptFilterTest extends TestCase
         $output = [
             'rerun' => 1.2,
             'variables' => [
-                'gender' => 'undefined'
+                'gender' => 'undefined',
             ],
             'items' => [
-                ['title' => 'good title']
-            ]
+                ['title' => 'good title'],
+            ],
         ];
 
         $this->assertEquals(json_encode($output), ScriptFilter::output());
@@ -190,7 +188,7 @@ final class ScriptFilterTest extends TestCase
 
         $output = [
             'variables' => [
-                'fruit' => 'tomato'
+                'fruit' => 'tomato',
             ],
             'items' => [],
         ];
@@ -209,7 +207,7 @@ final class ScriptFilterTest extends TestCase
         $output = [
             'variables' => [
                 'fruit' => 'cucumber',
-                'vegetable' => 'rhubarb'
+                'vegetable' => 'rhubarb',
             ],
             'items' => [],
         ];
@@ -286,7 +284,7 @@ final class ScriptFilterTest extends TestCase
             'rerun' => 4.5,
             'variables' => [
                 'food' => 'chocolate',
-                'dessert' => 'red beans'
+                'dessert' => 'red beans',
             ],
             'items' => [
                 [
@@ -305,48 +303,48 @@ final class ScriptFilterTest extends TestCase
                             'arg' => 'ctrl arg',
                             'subtitle' => 'ctrl subtitle',
                             'valid' => true,
-                        ]
+                        ],
                     ],
                     'text' => [
                         'copy' => 'copyy',
-                        'largetype' => 'largetypee'
+                        'largetype' => 'largetypee',
                     ],
-                    'quicklookurl' => 'quicklookurll'
+                    'quicklookurl' => 'quicklookurll',
                 ],
                 [
                     'icon' => [
                         'path' => 'icon pathh',
-                        'type' => 'fileicon'
+                        'type' => 'fileicon',
                     ],
                     'mods' => [
                         'shift' => [
-                            'subtitle' => 'shift subtitle'
+                            'subtitle' => 'shift subtitle',
                         ],
                         'fn' => [
                             'arg' => 'fn arg',
                             'valid' => true,
-                        ]
-                    ]
+                        ],
+                    ],
                 ],
                 [
                     'variables' => [
                         'guitar' => 'fender',
-                        'amplifier' => 'orange'
+                        'amplifier' => 'orange',
                     ],
                     'mods' => [
                         'alt' => [
                             'icon' => [
                                 'path' => 'alt icon path',
-                                'type' => 'fileicon'
+                                'type' => 'fileicon',
                             ],
                             'variables' => [
                                 'grade' => 'colonel',
                                 'drug' => 'power',
-                            ]
-                        ]
-                    ]
-                ]
-            ]
+                            ],
+                        ],
+                    ],
+                ],
+            ],
         ];
 
         $this->assertJsonStringEqualsJsonString(json_encode($output), ScriptFilter::output());

@@ -27,11 +27,9 @@ final class ModTest extends TestCase
 
         $this->assertSame($output, $this->mod->toArray());
 
-
         $this->mod->valid('WRONG');
 
         $this->assertSame($output, $this->mod->toArray());
-
 
         $this->mod->valid(true);
 
@@ -69,11 +67,9 @@ final class ModTest extends TestCase
 
         $this->assertSame(['icon' => ['path' => '~/Dev']], $this->mod->toArray());
 
-
         $this->mod->icon(Icon::createFileicon('another'));
 
         $this->assertSame(['icon' => ['path' => 'another', 'type' => 'fileicon']], $this->mod->toArray());
-
 
         $this->mod->icon(Icon::create('paf')->filetype());
 
@@ -104,8 +100,8 @@ final class ModTest extends TestCase
 
         $output = [
             'variables' => [
-                'car' => 'toyota'
-            ]
+                'car' => 'toyota',
+            ],
         ];
 
         $this->assertSame($output, $this->mod->toArray());
@@ -118,14 +114,13 @@ final class ModTest extends TestCase
             'variables' => [
                 'plane' => 'airbus',
                 'fruit' => 'apple',
-            ]
+            ],
         ];
 
         $this->mod->variable(Variable::create('plane', 'airbus'))
             ->variable(Variable::create('fruit', 'apple'));
 
         $this->assertSame($output, $this->mod->toArray());
-
 
         $this->mod->variables(
             Variable::create('plane', 'airbus'),
@@ -139,7 +134,7 @@ final class ModTest extends TestCase
     public function it_may_have_empty_variables()
     {
         $output = [
-            'variables' => []
+            'variables' => [],
         ];
 
         $this->mod->variables(Variable::create());

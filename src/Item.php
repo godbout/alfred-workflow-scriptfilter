@@ -55,22 +55,22 @@ class Item
 
     public static function create()
     {
-        return new Item;
+        return new self;
     }
 
     public static function createDefault()
     {
-        return Item::create()->type('default');
+        return self::create()->type('default');
     }
 
     public static function createFile()
     {
-        return Item::create()->type('file');
+        return self::create()->type('file');
     }
 
     public static function createSkipcheck()
     {
-        return Item::create()->type('file:skipcheck');
+        return self::create()->type('file:skipcheck');
     }
 
     public function valid($validity = true)

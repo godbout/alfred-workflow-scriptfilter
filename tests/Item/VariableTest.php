@@ -2,12 +2,11 @@
 
 namespace Tests\Item;
 
-use Godbout\Alfred\Icon;
 use Godbout\Alfred\Item;
 use Godbout\Alfred\Variable;
 use PHPUnit\Framework\TestCase;
 
-final class ItemVariableTest extends TestCase
+final class VariableTest extends TestCase
 {
     public function setUp()
     {
@@ -41,8 +40,8 @@ final class ItemVariableTest extends TestCase
         $output = [
             'variables' => [
                 'race' => 'human',
-                'color' => 'absolutely'
-            ]
+                'color' => 'absolutely',
+            ],
         ];
 
         $this->assertSame($output, $this->item->toArray());

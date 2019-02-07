@@ -9,10 +9,10 @@ use Godbout\Alfred\Mods\Alt;
 use Godbout\Alfred\Variable;
 use Godbout\Alfred\Mods\Ctrl;
 use Godbout\Alfred\Mods\Shift;
-use Godbout\Alfred\ScriptFilter;
 use PHPUnit\Framework\TestCase;
+use Godbout\Alfred\ScriptFilter;
 
-final class FluentApiScriptFilterTest extends TestCase
+final class ScriptFilterTest extends TestCase
 {
     public function tearDown()
     {
@@ -28,7 +28,7 @@ final class FluentApiScriptFilterTest extends TestCase
             ->item(Item::create());
 
         $output = ['items' => [
-            []
+            [],
         ]];
 
         $this->assertSame(json_encode($output), ScriptFilter::output());
@@ -76,7 +76,7 @@ final class FluentApiScriptFilterTest extends TestCase
 
         $output = [
             'variables' => [
-                'fruit' => 'tomato'
+                'fruit' => 'tomato',
             ],
             'items' => [],
         ];
@@ -98,7 +98,7 @@ final class FluentApiScriptFilterTest extends TestCase
         $output = [
             'variables' => [
                 'fruit' => 'cucumber',
-                'vegetable' => 'rhubarb'
+                'vegetable' => 'rhubarb',
             ],
             'items' => [],
         ];
@@ -118,7 +118,7 @@ final class FluentApiScriptFilterTest extends TestCase
         $output = [
             'variables' => [
                 'fruit' => 'cucumber',
-                'vegetable' => 'rhubarb'
+                'vegetable' => 'rhubarb',
             ],
             'items' => [],
         ];
@@ -204,7 +204,7 @@ final class FluentApiScriptFilterTest extends TestCase
             'rerun' => 4.5,
             'variables' => [
                 'food' => 'chocolate',
-                'dessert' => 'red beans'
+                'dessert' => 'red beans',
             ],
             'items' => [
                 [
@@ -223,48 +223,48 @@ final class FluentApiScriptFilterTest extends TestCase
                             'arg' => 'ctrl arg',
                             'subtitle' => 'ctrl subtitle',
                             'valid' => true,
-                        ]
+                        ],
                     ],
                     'text' => [
                         'copy' => 'copyy',
-                        'largetype' => 'largetypee'
+                        'largetype' => 'largetypee',
                     ],
-                    'quicklookurl' => 'quicklookurll'
+                    'quicklookurl' => 'quicklookurll',
                 ],
                 [
                     'icon' => [
                         'path' => 'icon pathh',
-                        'type' => 'fileicon'
+                        'type' => 'fileicon',
                     ],
                     'mods' => [
                         'shift' => [
-                            'subtitle' => 'shift subtitle'
+                            'subtitle' => 'shift subtitle',
                         ],
                         'fn' => [
                             'arg' => 'fn arg',
                             'valid' => true,
-                        ]
-                    ]
+                        ],
+                    ],
                 ],
                 [
                     'variables' => [
                         'guitar' => 'fender',
-                        'amplifier' => 'orange'
+                        'amplifier' => 'orange',
                     ],
                     'mods' => [
                         'alt' => [
                             'icon' => [
                                 'path' => 'alt icon path',
-                                'type' => 'fileicon'
+                                'type' => 'fileicon',
                             ],
                             'variables' => [
                                 'grade' => 'colonel',
                                 'drug' => 'power',
-                            ]
-                        ]
-                    ]
-                ]
-            ]
+                            ],
+                        ],
+                    ],
+                ],
+            ],
         ];
 
         $this->assertJsonStringEqualsJsonString(json_encode($output), ScriptFilter::output());
