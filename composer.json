@@ -6,7 +6,7 @@
         "alfred-workflow-php"
     ],
     "homepage": "https://github.com/godbout/alfred-workflow-php",
-    "license": "MIT License",
+    "license": "MIT",
     "type": "library",
     "authors": [
         {
