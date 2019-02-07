@@ -1,5 +1,10 @@
 # Alfred Workflow PHP
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/godbout/alfred-workflow-php.svg?style=flat-square)](https://packagist.org/packages/godbout/alfred-workflow-php)
+[![Build Status](https://img.shields.io/travis/godbout/alfred-workflow-php/master.svg?style=flat-square)](https://travis-ci.org/godbout/alfred-workflow-php)
+[![Quality Score](https://img.shields.io/scrutinizer/g/godbout/alfred-workflow-php.svg?style=flat-square)](https://scrutinizer-ci.com/g/godbout/alfred-workflow-php)
+[![Total Downloads](https://img.shields.io/packagist/dt/godbout/alfred-workflow-php.svg?style=flat-square)](https://packagist.org/packages/godbout/alfred-workflow-php)
+
 ## Why
 
 Starting with Alfred 3.4.1 you can define [variables][1] for individual items and
