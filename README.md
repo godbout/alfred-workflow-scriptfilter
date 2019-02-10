@@ -255,6 +255,16 @@ Icon::create()->path('~/Desktop')->filetype();
 Variable::create('guitar', 'fender');
 // same same
 Variable::create()->name('guitar')->value('fender');
+
+
+/**
+ * Anywhere you use the ->variable(...) fluent interface
+ * you can pass the name and value arguments directly
+ * if this is your thing.
+ */
+...->variable(Variable::create('gender', 'unknown');
+// same same
+...->variable('gender', 'unknown');
 ```
 
 ## Full API
