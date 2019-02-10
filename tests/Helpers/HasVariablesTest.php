@@ -3,8 +3,8 @@
 namespace Tests\Helpers;
 
 use Godbout\Alfred\Item;
-use Godbout\Alfred\ScriptFilter;
 use PHPUnit\Framework\TestCase;
+use Godbout\Alfred\ScriptFilter;
 
 final class HasVariablesTest extends TestCase
 {
