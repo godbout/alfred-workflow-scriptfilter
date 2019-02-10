@@ -8,9 +8,13 @@ trait HasVariables
 {
     public $variables = null;
 
-    public function variable(Variable $variable)
+    public function variable(...$arguments)
     {
-        $this->variables = array_merge((array) $this->variables, $variable->toArray());
+        if (! $arguments[0] instanceof Variable) {
+            $arguments[0] = Variable::create($arguments[0], $arguments[1]);
+        }
+
+        $this->variables = array_merge((array) $this->variables, $arguments[0]->toArray());
 
         return $this;
     }

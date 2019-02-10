@@ -94,9 +94,7 @@ final class ModTest extends TestCase
     /** @test */
     public function it_may_have_one_variable()
     {
-        $this->mod->variable(
-            Variable::create('car', 'toyota')
-        );
+        $this->mod->variable('car', 'toyota');
 
         $output = [
             'variables' => [
