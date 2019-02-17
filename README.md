@@ -1,9 +1,13 @@
-# Alfred Workflow PHP
+<h1 align="center">Alfred Workflow PHP</h1>
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/godbout/alfred-workflow-php.svg?style=flat-square)](https://packagist.org/packages/godbout/alfred-workflow-php)
-[![Build Status](https://img.shields.io/travis/godbout/alfred-workflow-php/master.svg?style=flat-square)](https://travis-ci.org/godbout/alfred-workflow-php)
-[![Quality Score](https://img.shields.io/scrutinizer/g/godbout/alfred-workflow-php.svg?style=flat-square)](https://scrutinizer-ci.com/g/godbout/alfred-workflow-php)
-[![Total Downloads](https://img.shields.io/packagist/dt/godbout/alfred-workflow-php.svg?style=flat-square)](https://packagist.org/packages/godbout/alfred-workflow-php)
+<p align="center">
+    <a href="https://packagist.org/packages/godbout/alfred-workflow-php"><img src="https://img.shields.io/packagist/v/godbout/alfred-workflow-php.svg?style=flat-square" alt="Latest Version on Packagist"></a>
+    <a href="https://travis-ci.org/godbout/alfred-workflow-php"><img src="https://img.shields.io/travis/godbout/alfred-workflow-php/master.svg?style=flat-square" alt="Build Status"></a>
+    <a href="https://scrutinizer-ci.com/g/godbout/alfred-workflow-php"><img src="https://img.shields.io/scrutinizer/g/godbout/alfred-workflow-php.svg?style=flat-square" alt="Quality Score"></a>
+    <a href="https://packagist.org/packages/godbout/alfred-workflow-php"><img src="https://img.shields.io/packagist/dt/godbout/alfred-workflow-php.svg?style=flat-square" alt="Total Downloads"></a>
+</p>
+
+___
 
 ## Why
 
