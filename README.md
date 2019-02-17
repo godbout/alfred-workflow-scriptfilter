@@ -29,6 +29,8 @@ instances of all the other classes: `Item`, `Variable`, `Icon`, and the `Mod` cl
 You may check the structure and options of the Alfred Script Filter JSON Format here: https://www.alfredapp.com/help/workflows/inputs/script-filter/json/
 
 ```php
+require __DIR__ . '/../vendor/autoload.php';
+
 use Godbout\Alfred\ScriptFilter;
 
 ScriptFilter::create();
