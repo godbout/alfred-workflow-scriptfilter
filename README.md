@@ -1,4 +1,4 @@
-<h1 align="center">Alfred Workflow PHP</h1>
+<h1 align="center">PHP Alfred Workflow ScriptFilter</h1>
 
 <p align="center">
     <a href="https://packagist.org/packages/godbout/alfred-workflow-php"><img src="https://img.shields.io/packagist/v/godbout/alfred-workflow-php.svg?style=flat-square" alt="Latest Version on Packagist"></a>
