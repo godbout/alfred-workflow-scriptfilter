@@ -1,8 +1,8 @@
 <?php
 
-namespace Godbout\Alfred\Traits;
+namespace Godbout\Alfred\Workflow\Traits;
 
-use Godbout\Alfred\Icon;
+use Godbout\Alfred\Workflow\Icon;
 
 trait HasIcon
 {

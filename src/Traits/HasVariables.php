@@ -1,8 +1,8 @@
 <?php
 
-namespace Godbout\Alfred\Traits;
+namespace Godbout\Alfred\Workflow\Traits;
 
-use Godbout\Alfred\Variable;
+use Godbout\Alfred\Workflow\Variable;
 
 trait HasVariables
 {

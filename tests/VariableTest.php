@@ -2,8 +2,8 @@
 
 namespace Tests;
 
-use Godbout\Alfred\Variable;
 use PHPUnit\Framework\TestCase;
+use Godbout\Alfred\Workflow\Variable;
 
 final class VariableTest extends TestCase
 {

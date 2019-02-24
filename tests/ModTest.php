@@ -2,9 +2,9 @@
 
 namespace Tests;
 
-use Godbout\Alfred\Icon;
-use Godbout\Alfred\Variable;
-use Godbout\Alfred\Mods\Ctrl;
+use Godbout\Alfred\Workflow\Icon;
+use Godbout\Alfred\Workflow\Variable;
+use Godbout\Alfred\Workflow\Mods\Ctrl;
 use PHPUnit\Framework\TestCase;
 
 final class ModTest extends TestCase

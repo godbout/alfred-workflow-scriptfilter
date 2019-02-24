@@ -2,7 +2,7 @@
 
 namespace Tests\Item;
 
-use Godbout\Alfred\Item;
+use Godbout\Alfred\Workflow\Item;
 use PHPUnit\Framework\TestCase;
 
 final class OtherFieldsTest extends TestCase

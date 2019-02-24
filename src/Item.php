@@ -1,16 +1,16 @@
 <?php
 
-namespace Godbout\Alfred;
+namespace Godbout\Alfred\Workflow;
 
 use ReflectionClass;
-use Godbout\Alfred\Mods\Fn;
-use Godbout\Alfred\Mods\Alt;
-use Godbout\Alfred\Mods\Cmd;
-use Godbout\Alfred\Mods\Mod;
-use Godbout\Alfred\Mods\Ctrl;
-use Godbout\Alfred\Mods\Shift;
-use Godbout\Alfred\Traits\HasIcon;
-use Godbout\Alfred\Traits\HasVariables;
+use Godbout\Alfred\Workflow\Mods\Fn;
+use Godbout\Alfred\Workflow\Mods\Alt;
+use Godbout\Alfred\Workflow\Mods\Cmd;
+use Godbout\Alfred\Workflow\Mods\Mod;
+use Godbout\Alfred\Workflow\Mods\Ctrl;
+use Godbout\Alfred\Workflow\Mods\Shift;
+use Godbout\Alfred\Workflow\Traits\HasIcon;
+use Godbout\Alfred\Workflow\Traits\HasVariables;
 
 class Item
 {

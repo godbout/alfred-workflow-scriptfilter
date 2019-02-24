@@ -1,6 +1,6 @@
 <?php
 
-namespace Godbout\Alfred;
+namespace Godbout\Alfred\Workflow;
 
 class Variable
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Godbout\Alfred\Mods;
+namespace Godbout\Alfred\Workflow\Mods;
 
 class Shift extends Mod
 {

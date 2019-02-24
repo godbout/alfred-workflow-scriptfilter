@@ -2,9 +2,9 @@
 
 namespace Tests\Helpers;
 
-use Godbout\Alfred\Item;
 use PHPUnit\Framework\TestCase;
-use Godbout\Alfred\ScriptFilter;
+use Godbout\Alfred\Workflow\Item;
+use Godbout\Alfred\Workflow\ScriptFilter;
 
 final class HasVariablesTest extends TestCase
 {

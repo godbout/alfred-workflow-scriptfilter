@@ -1,9 +1,9 @@
 <?php
 
-namespace Godbout\Alfred\Mods;
+namespace Godbout\Alfred\Workflow\Mods;
 
-use Godbout\Alfred\Traits\HasIcon;
-use Godbout\Alfred\Traits\HasVariables;
+use Godbout\Alfred\Workflow\Traits\HasIcon;
+use Godbout\Alfred\Workflow\Traits\HasVariables;
 
 abstract class Mod
 {

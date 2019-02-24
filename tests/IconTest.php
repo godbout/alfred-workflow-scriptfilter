@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use Godbout\Alfred\Icon;
+use Godbout\Alfred\Workflow\Icon;
 use PHPUnit\Framework\TestCase;
 
 final class IconTest extends TestCase
