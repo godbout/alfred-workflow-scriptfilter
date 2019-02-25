@@ -1,12 +1,12 @@
 {
-    "name": "godbout/alfred-workflow-php",
+    "name": "godbout/alfred-workflow-scriptfilter",
     "description": "Makes it easy and fun to build Alfred 3 Workflows in PHP.",
     "keywords": [
         "alfred",
         "workflow",
         "php"
     ],
-    "homepage": "https://github.com/godbout/alfred-workflow-php",
+    "homepage": "https://github.com/godbout/alfred-workflow-scriptfilter",
     "license": "MIT",
     "type": "library",
     "authors": [
