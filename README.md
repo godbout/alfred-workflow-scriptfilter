@@ -4,6 +4,7 @@
     <a href="https://packagist.org/packages/godbout/alfred-workflow-php"><img src="https://img.shields.io/packagist/v/godbout/alfred-workflow-php.svg?style=flat-square" alt="Latest Version on Packagist"></a>
     <a href="https://travis-ci.org/godbout/alfred-workflow-php"><img src="https://img.shields.io/travis/godbout/alfred-workflow-php/master.svg?style=flat-square" alt="Build Status"></a>
     <a href="https://scrutinizer-ci.com/g/godbout/alfred-workflow-php"><img src="https://img.shields.io/scrutinizer/g/godbout/alfred-workflow-php.svg?style=flat-square" alt="Quality Score"></a>
+    <a href="https://scrutinizer-ci.com/g/godbout/alfred-workflow-php"><img src="https://scrutinizer-ci.com/g/godbout/alfred-workflow-php/badges/coverage.png?b=master" alt="Code Coverage"></a>
     <a href="https://packagist.org/packages/godbout/alfred-workflow-php"><img src="https://img.shields.io/packagist/dt/godbout/alfred-workflow-php.svg?style=flat-square" alt="Total Downloads"></a>
 </p>
 
