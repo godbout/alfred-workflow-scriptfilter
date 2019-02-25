@@ -36,7 +36,7 @@ You may check the structure and options of the Alfred Script Filter JSON Format 
 ```php
 require __DIR__ . '/../vendor/autoload.php';
 
-use Godbout\Alfred\ScriptFilter;
+use Godbout\Alfred\Workflow\ScriptFilter;
 
 echo ScriptFilter::output();
 ```
