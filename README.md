@@ -286,4 +286,4 @@ where Alfred is expecting something strict.
 
 [1]: https://www.alfredapp.com/help/workflows/inputs/script-filter/json/#variables
 [2]: https://github.com/joetannenbaum/alfred-workflow
-[3]: https://github.com/godbout/alfred-workflow-php/tree/master/tests
+[3]: https://github.com/godbout/alfred-workflow-scriptfilter/tree/master/tests
