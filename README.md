@@ -38,8 +38,6 @@ require __DIR__ . '/../vendor/autoload.php';
 
 use Godbout\Alfred\ScriptFilter;
 
-ScriptFilter::create();
-
 echo ScriptFilter::output();
 ```
 

@@ -10,28 +10,29 @@ class ScriptFilter
 
     private static $instance = null;
 
-    private static $rerun = null;
+    private $rerun = null;
 
-    private static $items = [];
+    private $items = [];
+
 
     public static function getInstance()
     {
-        return self::create();
-    }
-
-    public static function create()
-    {
-        if (self::$instance === null) {
-            self::$instance = new self();
+        if (is_null(self::$instance)) {
+            self::$instance = new self;
         }
 
         return self::$instance;
     }
 
+    public static function create()
+    {
+        return self::getInstance();
+    }
+
     public static function rerun($seconds = null)
     {
         if ($seconds >= 0.1 && $seconds <= 5.0) {
-            self::$rerun = $seconds;
+            self::getInstance()->rerun = $seconds;
         }
 
         return self::$instance;
@@ -39,14 +40,14 @@ class ScriptFilter
 
     public function item(Item $item)
     {
-        self::add($item);
+        self::getInstance()->add($item);
 
         return $this;
     }
 
     public function items(Item ...$items)
     {
-        self::add(...$items);
+        self::getInstance()->add(...$items);
 
         return $this;
     }
@@ -59,7 +60,7 @@ class ScriptFilter
             }
 
             if ($object instanceof Item) {
-                self::$items[] = $object;
+                self::getInstance()->items[] = $object;
             }
         }
 
@@ -68,8 +69,8 @@ class ScriptFilter
 
     public static function output()
     {
-        if (self::$rerun !== null) {
-            $output['rerun'] = self::$rerun;
+        if (self::getInstance()->rerun !== null) {
+            $output['rerun'] = self::getInstance()->rerun;
         }
 
         if (self::getInstance()->variables !== null) {
@@ -78,25 +79,22 @@ class ScriptFilter
 
         $output['items'] = array_map(function ($item) {
             return $item->toArray();
-        }, self::$items);
+        }, self::getInstance()->items);
 
         return json_encode($output);
     }
 
-    public static function reset()
-    {
-        self::$rerun = null;
-        self::getInstance()->variables = null;
-        self::$items = [];
-
-        return self::$instance;
-    }
-
     public static function destroy()
     {
-        self::reset();
-        self::$instance = null;
+        self::getInstance()->reset();
 
-        return self::$instance;
+        self::$instance = null;
+    }
+
+    public static function reset()
+    {
+        self::getInstance()->rerun = null;
+        self::getInstance()->variables = null;
+        self::getInstance()->items = [];
     }
 }

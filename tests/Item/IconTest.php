@@ -2,9 +2,9 @@
 
 namespace Tests\Item;
 
+use PHPUnit\Framework\TestCase;
 use Godbout\Alfred\Workflow\Icon;
 use Godbout\Alfred\Workflow\Item;
-use PHPUnit\Framework\TestCase;
 
 final class IconTest extends TestCase
 {

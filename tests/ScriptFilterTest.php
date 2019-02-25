@@ -14,13 +14,6 @@ use Godbout\Alfred\Workflow\ScriptFilter;
 
 final class ScriptFilterTest extends TestCase
 {
-    public function setUp()
-    {
-        parent::setUp();
-
-        ScriptFilter::create();
-    }
-
     public function tearDown()
     {
         parent::tearDown();
@@ -218,8 +211,6 @@ final class ScriptFilterTest extends TestCase
     /** @test */
     public function the_output_may_contain_every_field_available_up_to_alfred_3_5()
     {
-        ScriptFilter::create();
-
         ScriptFilter::add(
             Item::create()
                 ->uid('uidd')
