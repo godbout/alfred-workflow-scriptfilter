@@ -1,11 +1,11 @@
 <h1 align="center">PHP Alfred Workflow ScriptFilter</h1>
 
 <p align="center">
-    <a href="https://packagist.org/packages/godbout/alfred-workflow-php"><img src="https://img.shields.io/packagist/v/godbout/alfred-workflow-php.svg?style=flat-square" alt="Latest Version on Packagist"></a>
-    <a href="https://travis-ci.org/godbout/alfred-workflow-php"><img src="https://img.shields.io/travis/godbout/alfred-workflow-php/master.svg?style=flat-square" alt="Build Status"></a>
-    <a href="https://scrutinizer-ci.com/g/godbout/alfred-workflow-php"><img src="https://img.shields.io/scrutinizer/g/godbout/alfred-workflow-php.svg?style=flat-square" alt="Quality Score"></a>
-    <a href="https://scrutinizer-ci.com/g/godbout/alfred-workflow-php"><img src="https://scrutinizer-ci.com/g/godbout/alfred-workflow-php/badges/coverage.png?b=master" alt="Code Coverage"></a>
-    <a href="https://packagist.org/packages/godbout/alfred-workflow-php"><img src="https://img.shields.io/packagist/dt/godbout/alfred-workflow-php.svg?style=flat-square" alt="Total Downloads"></a>
+    <a href="https://packagist.org/packages/godbout/alfred-workflow-scriptfilter"><img src="https://img.shields.io/packagist/v/godbout/alfred-workflow-scriptfilter.svg?style=flat-square" alt="Latest Version on Packagist"></a>
+    <a href="https://travis-ci.org/godbout/alfred-workflow-scriptfilter"><img src="https://img.shields.io/travis/godbout/alfred-workflow-scriptfilter/master.svg?style=flat-square" alt="Build Status"></a>
+    <a href="https://scrutinizer-ci.com/g/godbout/alfred-workflow-scriptfilter"><img src="https://img.shields.io/scrutinizer/g/godbout/alfred-workflow-scriptfilter.svg?style=flat-square" alt="Quality Score"></a>
+    <a href="https://scrutinizer-ci.com/g/godbout/alfred-workflow-scriptfilter"><img src="https://scrutinizer-ci.com/g/godbout/alfred-workflow-scriptfilter/badges/coverage.png?b=master" alt="Code Coverage"></a>
+    <a href="https://packagist.org/packages/godbout/alfred-workflow-scriptfilter"><img src="https://img.shields.io/packagist/dt/godbout/alfred-workflow-scriptfilter.svg?style=flat-square" alt="Total Downloads"></a>
 </p>
 
 ___
@@ -23,7 +23,7 @@ Joe Tannenbaum's [package][2]. His API might be a little less heavier than mine.
 ## Installation
 
 ```php
-composer require godbout/alfred-workflow-php
+composer require godbout/alfred-workflow-scriptfilter
 ```
 
 ## Usage
