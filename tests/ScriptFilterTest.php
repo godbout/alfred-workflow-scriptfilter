@@ -340,4 +340,36 @@ final class ScriptFilterTest extends TestCase
 
         $this->assertJsonStringEqualsJsonString(json_encode($output), ScriptFilter::output());
     }
+
+    /** @test */
+    public function it_can_filter_items()
+    {
+        $this->markTestIncomplete('Code has not been built yet.');
+
+        ScriptFilter::add(
+            Item::create()->title('Olá'),
+            Item::create()->title('Bonjour'),
+            Item::create()->title('Hello')
+        );
+
+        $outputNotFiltered = [
+            'items' => [
+                ['title' => 'Olá'],
+                ['title' => 'Bonjour'],
+                ['title' => 'Hello']
+            ]
+        ];
+
+        $this->assertSame(json_encode($outputNotFiltered), ScriptFilter::output());
+
+        $outputFiltered = [
+                'items' => [
+                    ['title' => 'Bonjour'],
+                ]
+            ];
+
+        ScriptFilter::filterItems('Bon');
+
+        $this->assertSame(json_encode($outputFiltered), ScriptFilter::output());
+    }
 }

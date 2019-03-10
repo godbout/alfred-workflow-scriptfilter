@@ -67,6 +67,10 @@ class ScriptFilter
         return self::$instance;
     }
 
+    public static function filterItems($term = '', $field = '')
+    {
+    }
+
     public static function output()
     {
         if (self::getInstance()->rerun !== null) {
