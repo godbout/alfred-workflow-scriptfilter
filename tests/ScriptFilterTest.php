@@ -342,10 +342,8 @@ final class ScriptFilterTest extends TestCase
     }
 
     /** @test */
-    public function it_can_filter_items()
+    public function it_can_filter_items_by_title()
     {
-        $this->markTestIncomplete('Code has not been built yet.');
-
         ScriptFilter::add(
             Item::create()->title('Olá'),
             Item::create()->title('Bonjour'),
@@ -371,5 +369,26 @@ final class ScriptFilterTest extends TestCase
         ScriptFilter::filterItems('Bon');
 
         $this->assertSame(json_encode($outputFiltered), ScriptFilter::output());
+    }
+
+    /** @test */
+    public function it_can_filter_items_by_something_else_than_title()
+    {
+        ScriptFilter::add(
+            Item::create()->subtitle('Select to delete timer'),
+            Item::create()->subtitle('Select to choose timer'),
+            Item::create()->subtitle('Select to see timer'),
+            Item::create()->subtitle('Select to continue timer')
+        );
+
+        $outputNotFiltered = [
+            'items' => [
+                ['subtitle' => 'Select to see timer']
+            ]
+        ];
+
+        ScriptFilter::filterItems('see', 'subtitle');
+
+        $this->assertSame(json_encode($outputNotFiltered), ScriptFilter::output());
     }
 }

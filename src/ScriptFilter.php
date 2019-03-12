@@ -67,8 +67,19 @@ class ScriptFilter
         return self::$instance;
     }
 
-    public static function filterItems($term = '', $field = '')
+    public static function filterItems($term = '', $field = 'title')
     {
+        $items = &self::getInstance()->items;
+
+        $items = array_values(
+            array_filter($items, function ($item) use ($term, $field) {
+                if (strpos($item->$field, $term) !== false) {
+                    return $item;
+                }
+            })
+        );
+
+        return self::$instance;
     }
 
     public static function output()
