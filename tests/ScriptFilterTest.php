@@ -381,7 +381,7 @@ final class ScriptFilterTest extends TestCase
             Item::create()->subtitle('Select to continue timer')
         );
 
-        $outputNotFiltered = [
+        $output = [
             'items' => [
                 ['subtitle' => 'Select to see timer']
             ]
@@ -389,6 +389,26 @@ final class ScriptFilterTest extends TestCase
 
         ScriptFilter::filterItems('see', 'subtitle');
 
-        $this->assertSame(json_encode($outputNotFiltered), ScriptFilter::output());
+        $this->assertSame(json_encode($output), ScriptFilter::output());
+    }
+
+    /** @test */
+    public function filtering_items_is_case_insensitive()
+    {
+        ScriptFilter::add(
+            Item::create()->title('Renault'),
+            Item::create()->title('Peugeot'),
+            Item::create()->title('Citroën')
+        );
+
+        $output = [
+            'items' => [
+                ['title'  => 'Peugeot']
+            ]
+        ];
+
+        ScriptFilter::filterItems('peu');
+
+        $this->assertSame(json_encode($output), ScriptFilter::output());
     }
 }
