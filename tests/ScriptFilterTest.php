@@ -411,4 +411,28 @@ final class ScriptFilterTest extends TestCase
 
         $this->assertSame(json_encode($output), ScriptFilter::output());
     }
+
+    /** @test */
+    public function filtering_items_with_an_empty_string_or_null_as_argument_does_not_filter_items()
+    {
+        ScriptFilter::add(
+            Item::create()->title('bananas'),
+            Item::create()->title('apricots'),
+            Item::create()->title('tomatoes')
+        );
+
+        $output = [
+            'items' => [
+                ['title'  => 'bananas'],
+                ['title'  => 'apricots'],
+                ['title'  => 'tomatoes']
+            ]
+        ];
+
+        ScriptFilter::filterItems();
+        ScriptFilter::filterItems('');
+        ScriptFilter::filterItems(null);
+
+        $this->assertSame(json_encode($output), ScriptFilter::output());
+    }
 }
