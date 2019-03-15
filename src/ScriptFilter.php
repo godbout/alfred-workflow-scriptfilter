@@ -73,7 +73,7 @@ class ScriptFilter
 
         $items = array_values(
             array_filter($items, function ($item) use ($term, $field) {
-                if (stripos($item->$field, $term) !== false || empty($term)) {
+                if (empty($term) || stripos($item->$field, $term) !== false) {
                     return $item;
                 }
             })
