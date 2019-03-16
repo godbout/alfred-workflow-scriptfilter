@@ -82,6 +82,13 @@ class ScriptFilter
         return self::$instance;
     }
 
+    public static function sortItems($direction = 'asc', $field = 'title')
+    {
+        $items = &self::getInstance()->items;
+
+        sort($items);
+    }
+
     public static function output()
     {
         if (self::getInstance()->rerun !== null) {

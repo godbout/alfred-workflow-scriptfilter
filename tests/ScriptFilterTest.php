@@ -435,4 +435,109 @@ final class ScriptFilterTest extends TestCase
 
         $this->assertSame(json_encode($output), ScriptFilter::output());
     }
+
+    /** @test */
+    public function it_can_sort_items_ascendingly_by_title()
+    {
+        ScriptFilter::add(
+            Item::create()->title('France'),
+            Item::create()->title('Angola'),
+            Item::create()->title('Portugal')
+        );
+
+        $output = [
+            'items' => [
+                ['title' => 'Angola'],
+                ['title' => 'France'],
+                ['title' => 'Portugal'],
+            ]
+        ];
+
+        ScriptFilter::sortItems();
+
+        $this->assertSame(json_encode($output), ScriptFilter::output());
+    }
+
+    /** @test */
+    public function it_can_sort_items_descendingly_by_title()
+    {
+        ScriptFilter::add(
+            Item::create()->title('France'),
+            Item::create()->title('Angola'),
+            Item::create()->title('Portugal')
+        );
+
+        $output = [
+            'items' => [
+                ['title' => 'Portugal'],
+                ['title' => 'France'],
+                ['title' => 'Angola'],
+            ]
+        ];
+
+        ScriptFilter::sortItems('desc');
+
+        $this->assertSame(json_encode($output), ScriptFilter::output());
+    }
+
+    /** @test */
+    public function it_can_sort_items_ascendingly_by_any_field()
+    {
+        ScriptFilter::add(
+            Item::create()->title('Megane')->subtitle('Renault'),
+            Item::create()->title('206')->subtitle('Peugeot'),
+            Item::create()->title('Veyron')->subtitle('Bugatti')
+        );
+
+        $output = [
+            'items' => [
+                [
+                    'title' => 'Veyron',
+                    'subtitle' => 'Bugatti'
+                ],
+                [
+                    'title' => '206',
+                    'subtitle' => 'Peugeot'
+                ],
+                [
+                    'title' => 'Megane',
+                    'subtitle' => 'Renault'
+                ]
+            ],
+        ];
+
+        ScriptFilter::sortItems();
+
+        $this->assertSame(json_encode($output), ScriptFilter::output());
+    }
+
+    public function it_can_sort_items_descendingly_by_any_field()
+    {
+        ScriptFilter::add(
+            Item::create()->title('Megane')->subtitle('Renault'),
+            Item::create()->title('206')->subtitle('Peugeot'),
+            Item::create()->title('Veyron')->subtitle('Bugatti')
+        );
+
+        $output = [
+            'items' => [
+                [
+                    'title' => 'Megane',
+                    'subtitle' => 'Renault'
+                ],
+                [
+                    'title' => '206',
+                    'subtitle' => 'Peugeot'
+                ],
+                [
+                    'title' => 'Veyron',
+                    'subtitle' => 'Bugatti'
+                ],
+            ],
+        ];
+
+        ScriptFilter::sortItems();
+
+        $this->assertSame(json_encode($output), ScriptFilter::output());
+    }
 }
