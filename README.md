@@ -184,6 +184,27 @@ will result in:
 }
 ```
 
+You can sort your results ascendingly, descendingly, by title or anything else:
+
+```php
+
+/**
+ * Will sort the items ascendingly
+ * based on titles.
+ */
+ScriptFilter::add(...);
+ScriptFilter::sortItems();
+ScriptFilter::output();
+
+/**
+ * Will sort the items descendingly
+ * based on subtitles.
+ */
+ScriptFilter::add(...);
+ScriptFilter::sortItems('desc', 'subtitle');
+ScriptFilter::output();
+```
+
 You can filter your results (you might want to do this with the input from the user) based on any field from your items:
 
 ```php
