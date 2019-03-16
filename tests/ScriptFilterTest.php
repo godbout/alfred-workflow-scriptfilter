@@ -541,4 +541,30 @@ final class ScriptFilterTest extends TestCase
 
         $this->assertSame(json_encode($output), ScriptFilter::output());
     }
+
+    /** @test */
+    public function sorting_items_is_case_insensitive()
+    {
+        ScriptFilter::add(
+            Item::create()->title('Sleeplessmind Ltd.'),
+            Item::create()->title('glmb.today'),
+            Item::create()->title('sleeplessmind.info'),
+            Item::create()->title('I Was Just Thinking'),
+            Item::create()->title('dailycuckoo.xyz')
+        );
+
+        $output = [
+            'items' => [
+                ['title' => 'dailycuckoo.xyz'],
+                ['title' => 'glmb.today'],
+                ['title' => 'I Was Just Thinking'],
+                ['title' => 'Sleeplessmind Ltd.'],
+                ['title' => 'sleeplessmind.info']
+            ]
+        ];
+
+        ScriptFilter::sortItems();
+
+        $this->assertSame(json_encode($output), ScriptFilter::output());
+    }
 }
