@@ -403,7 +403,7 @@ final class ScriptFilterTest extends TestCase
 
         $output = [
             'items' => [
-                ['title'  => 'Peugeot']
+                ['title' => 'Peugeot']
             ]
         ];
 
@@ -423,9 +423,9 @@ final class ScriptFilterTest extends TestCase
 
         $output = [
             'items' => [
-                ['title'  => 'bananas'],
-                ['title'  => 'apricots'],
-                ['title'  => 'tomatoes']
+                ['title' => 'bananas'],
+                ['title' => 'apricots'],
+                ['title' => 'tomatoes']
             ]
         ];
 
@@ -506,11 +506,12 @@ final class ScriptFilterTest extends TestCase
             ],
         ];
 
-        ScriptFilter::sortItems();
+        ScriptFilter::sortItems('asc', 'subtitle');
 
         $this->assertSame(json_encode($output), ScriptFilter::output());
     }
 
+    /** @test */
     public function it_can_sort_items_descendingly_by_any_field()
     {
         ScriptFilter::add(
@@ -536,7 +537,7 @@ final class ScriptFilterTest extends TestCase
             ],
         ];
 
-        ScriptFilter::sortItems();
+        ScriptFilter::sortItems('desc', 'subtitle');
 
         $this->assertSame(json_encode($output), ScriptFilter::output());
     }

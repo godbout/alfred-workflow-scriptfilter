@@ -86,7 +86,15 @@ class ScriptFilter
     {
         $items = &self::getInstance()->items;
 
-        sort($items);
+        usort($items, function ($a, $b) use ($direction, $field) {
+            if ($direction !== 'asc') {
+                return $b->$field > $a->$field;
+            }
+
+            return $a->$field > $b->$field;
+        });
+
+        return self::$instance;
     }
 
     public static function output()
