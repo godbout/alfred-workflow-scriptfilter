@@ -67,6 +67,36 @@ class ScriptFilter
         return self::$instance;
     }
 
+    public static function filterItems($term = '', $field = 'title')
+    {
+        $items = &self::getInstance()->items;
+
+        $items = array_values(
+            array_filter($items, function ($item) use ($term, $field) {
+                if (empty($term) || stripos($item->$field, $term) !== false) {
+                    return $item;
+                }
+            })
+        );
+
+        return self::$instance;
+    }
+
+    public static function sortItems($direction = 'asc', $field = 'title')
+    {
+        $items = &self::getInstance()->items;
+
+        usort($items, function ($a, $b) use ($direction, $field) {
+            if ($direction !== 'asc') {
+                return strtolower($b->$field) > strtolower($a->$field);
+            }
+
+            return strtolower($a->$field) > strtolower($b->$field);
+        });
+
+        return self::$instance;
+    }
+
     public static function output()
     {
         if (self::getInstance()->rerun !== null) {

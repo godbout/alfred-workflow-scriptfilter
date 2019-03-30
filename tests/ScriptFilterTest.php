@@ -340,4 +340,231 @@ final class ScriptFilterTest extends TestCase
 
         $this->assertJsonStringEqualsJsonString(json_encode($output), ScriptFilter::output());
     }
+
+    /** @test */
+    public function it_can_filter_items_by_title()
+    {
+        ScriptFilter::add(
+            Item::create()->title('Olá'),
+            Item::create()->title('Bonjour'),
+            Item::create()->title('Hello')
+        );
+
+        $outputNotFiltered = [
+            'items' => [
+                ['title' => 'Olá'],
+                ['title' => 'Bonjour'],
+                ['title' => 'Hello']
+            ]
+        ];
+
+        $this->assertSame(json_encode($outputNotFiltered), ScriptFilter::output());
+
+        $outputFiltered = [
+                'items' => [
+                    ['title' => 'Bonjour'],
+                ]
+            ];
+
+        ScriptFilter::filterItems('Bon');
+
+        $this->assertSame(json_encode($outputFiltered), ScriptFilter::output());
+    }
+
+    /** @test */
+    public function it_can_filter_items_by_something_else_than_title()
+    {
+        ScriptFilter::add(
+            Item::create()->subtitle('Select to delete timer'),
+            Item::create()->subtitle('Select to choose timer'),
+            Item::create()->subtitle('Select to see timer'),
+            Item::create()->subtitle('Select to continue timer')
+        );
+
+        $output = [
+            'items' => [
+                ['subtitle' => 'Select to see timer']
+            ]
+        ];
+
+        ScriptFilter::filterItems('see', 'subtitle');
+
+        $this->assertSame(json_encode($output), ScriptFilter::output());
+    }
+
+    /** @test */
+    public function filtering_items_is_case_insensitive()
+    {
+        ScriptFilter::add(
+            Item::create()->title('Renault'),
+            Item::create()->title('Peugeot'),
+            Item::create()->title('Citroën')
+        );
+
+        $output = [
+            'items' => [
+                ['title' => 'Peugeot']
+            ]
+        ];
+
+        ScriptFilter::filterItems('peu');
+
+        $this->assertSame(json_encode($output), ScriptFilter::output());
+    }
+
+    /** @test */
+    public function filtering_items_with_an_empty_string_or_null_as_argument_does_not_filter_items()
+    {
+        ScriptFilter::add(
+            Item::create()->title('bananas'),
+            Item::create()->title('apricots'),
+            Item::create()->title('tomatoes')
+        );
+
+        $output = [
+            'items' => [
+                ['title' => 'bananas'],
+                ['title' => 'apricots'],
+                ['title' => 'tomatoes']
+            ]
+        ];
+
+        ScriptFilter::filterItems();
+        ScriptFilter::filterItems('');
+        ScriptFilter::filterItems(null);
+
+        $this->assertSame(json_encode($output), ScriptFilter::output());
+    }
+
+    /** @test */
+    public function it_can_sort_items_ascendingly_by_title()
+    {
+        ScriptFilter::add(
+            Item::create()->title('France'),
+            Item::create()->title('Angola'),
+            Item::create()->title('Portugal')
+        );
+
+        $output = [
+            'items' => [
+                ['title' => 'Angola'],
+                ['title' => 'France'],
+                ['title' => 'Portugal'],
+            ]
+        ];
+
+        ScriptFilter::sortItems();
+
+        $this->assertSame(json_encode($output), ScriptFilter::output());
+    }
+
+    /** @test */
+    public function it_can_sort_items_descendingly_by_title()
+    {
+        ScriptFilter::add(
+            Item::create()->title('France'),
+            Item::create()->title('Angola'),
+            Item::create()->title('Portugal')
+        );
+
+        $output = [
+            'items' => [
+                ['title' => 'Portugal'],
+                ['title' => 'France'],
+                ['title' => 'Angola'],
+            ]
+        ];
+
+        ScriptFilter::sortItems('desc');
+
+        $this->assertSame(json_encode($output), ScriptFilter::output());
+    }
+
+    /** @test */
+    public function it_can_sort_items_ascendingly_by_any_field()
+    {
+        ScriptFilter::add(
+            Item::create()->title('Megane')->subtitle('Renault'),
+            Item::create()->title('206')->subtitle('Peugeot'),
+            Item::create()->title('Veyron')->subtitle('Bugatti')
+        );
+
+        $output = [
+            'items' => [
+                [
+                    'title' => 'Veyron',
+                    'subtitle' => 'Bugatti'
+                ],
+                [
+                    'title' => '206',
+                    'subtitle' => 'Peugeot'
+                ],
+                [
+                    'title' => 'Megane',
+                    'subtitle' => 'Renault'
+                ]
+            ],
+        ];
+
+        ScriptFilter::sortItems('asc', 'subtitle');
+
+        $this->assertSame(json_encode($output), ScriptFilter::output());
+    }
+
+    /** @test */
+    public function it_can_sort_items_descendingly_by_any_field()
+    {
+        ScriptFilter::add(
+            Item::create()->title('Megane')->subtitle('Renault'),
+            Item::create()->title('206')->subtitle('Peugeot'),
+            Item::create()->title('Veyron')->subtitle('Bugatti')
+        );
+
+        $output = [
+            'items' => [
+                [
+                    'title' => 'Megane',
+                    'subtitle' => 'Renault'
+                ],
+                [
+                    'title' => '206',
+                    'subtitle' => 'Peugeot'
+                ],
+                [
+                    'title' => 'Veyron',
+                    'subtitle' => 'Bugatti'
+                ],
+            ],
+        ];
+
+        ScriptFilter::sortItems('desc', 'subtitle');
+
+        $this->assertSame(json_encode($output), ScriptFilter::output());
+    }
+
+    /** @test */
+    public function sorting_items_is_case_insensitive()
+    {
+        ScriptFilter::add(
+            Item::create()->title('Sleeplessmind Ltd.'),
+            Item::create()->title('glmb.today'),
+            Item::create()->title('sleeplessmind.info'),
+            Item::create()->title('I Was Just Thinking'),
+            Item::create()->title('dailycuckoo.xyz')
+        );
+
+        $output = [
+            'items' => [
+                ['title' => 'dailycuckoo.xyz'],
+                ['title' => 'glmb.today'],
+                ['title' => 'I Was Just Thinking'],
+                ['title' => 'Sleeplessmind Ltd.'],
+                ['title' => 'sleeplessmind.info']
+            ]
+        ];
+
+        ScriptFilter::sortItems();
+
+        $this->assertSame(json_encode($output), ScriptFilter::output());
+    }
 }

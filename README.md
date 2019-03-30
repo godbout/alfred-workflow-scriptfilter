@@ -184,6 +184,48 @@ will result in:
 }
 ```
 
+You can sort your results ascendingly, descendingly, by title or anything else:
+
+```php
+
+/**
+ * Will sort the items ascendingly
+ * based on titles.
+ */
+ScriptFilter::add(...);
+ScriptFilter::sortItems();
+ScriptFilter::output();
+
+/**
+ * Will sort the items descendingly
+ * based on subtitles.
+ */
+ScriptFilter::add(...);
+ScriptFilter::sortItems('desc', 'subtitle');
+ScriptFilter::output();
+```
+
+You can filter your results (you might want to do this with the input from the user) based on any field from your items:
+
+```php
+
+/**
+ * Only items with a title that contains
+ * 'start' will show up in the output.
+ */
+ScriptFilter::add(...);
+ScriptFilter::filterItems('start');
+ScriptFilter::output();
+
+/**
+ * Only items with a subtitle that contains
+ * 'end' will show up in the output.
+ */
+ScriptFilter::add(...);
+ScriptFilter::filterItems('end', 'subtitle');
+ScriptFilter::output();
+```
+
 ## Helpers
 
 There's a couple of helpers that should make your code a bit more enjoyable to write. (Or not.)

@@ -101,4 +101,12 @@ final class OtherFieldsTest extends TestCase
 
         $this->item->bukowski();
     }
+
+    /** @test */
+    public function it_throws_an_exception_if_a_non_existing_property_is_getting_get_lol()
+    {
+        $this->expectException(\Exception::class);
+
+        $this->item->wtf;
+    }
 }

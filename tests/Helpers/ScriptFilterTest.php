@@ -135,6 +135,28 @@ final class ScriptFilterTest extends TestCase
     }
 
     /** @test */
+    public function the_output_may_be_filtered_through_a_fluent_api()
+    {
+        ScriptFilter::create()
+            ->items(
+                Item::create()->title('first'),
+                Item::create()->title('second'),
+                Item::create()->title('third'),
+                Item::create()->title('fourth')
+            )
+            ->filterItems('ir');
+
+        $output = [
+            'items' => [
+                ['title' => 'first'],
+                ['title' => 'third'],
+            ]
+        ];
+
+        $this->assertSame(json_encode($output), ScriptFilter::output());
+    }
+
+    /** @test */
     public function the_output_may_contain_every_field_available_up_to_alfred_3_5_through_a_fluent_api()
     {
         $scriptFilter = ScriptFilter::create();

@@ -145,6 +145,15 @@ class Item
         return $this;
     }
 
+    public function __get($name)
+    {
+        if (in_array($name, self::FIELDS_ALLOWED)) {
+            return $this->fields[$name];
+        }
+
+        throw new \Exception("'$name' is not a valid Item field.");
+    }
+
     public function __call($name, $arguments)
     {
         if (in_array($name, self::FIELDS_ALLOWED)) {
