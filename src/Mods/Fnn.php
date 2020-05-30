@@ -2,6 +2,6 @@
 
 namespace Godbout\Alfred\Workflow\Mods;
 
-class Fn extends Mod
+class Fnn extends Mod
 {
 }

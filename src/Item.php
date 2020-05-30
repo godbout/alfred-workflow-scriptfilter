@@ -3,9 +3,9 @@
 namespace Godbout\Alfred\Workflow;
 
 use ReflectionClass;
-use Godbout\Alfred\Workflow\Mods\Fn;
 use Godbout\Alfred\Workflow\Mods\Alt;
 use Godbout\Alfred\Workflow\Mods\Cmd;
+use Godbout\Alfred\Workflow\Mods\Fnn;
 use Godbout\Alfred\Workflow\Mods\Mod;
 use Godbout\Alfred\Workflow\Mods\Ctrl;
 use Godbout\Alfred\Workflow\Mods\Shift;
@@ -40,7 +40,7 @@ class Item
 
     const MODS_ALLOWED = [
         Shift::class,
-        Fn::class,
+        Fnn::class,
         Ctrl::class,
         Alt::class,
         Cmd::class,
@@ -176,6 +176,8 @@ class Item
 
     private function getModName(Mod $mod)
     {
-        return strtolower((new ReflectionClass($mod))->getShortName());
+        return strtolower(
+            (new ReflectionClass($mod))->getShortName() === 'Fnn' ? 'Fn' : (new ReflectionClass($mod))->getShortName()
+        );
     }
 }

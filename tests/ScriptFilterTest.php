@@ -5,7 +5,7 @@ namespace Tests;
 use PHPUnit\Framework\TestCase;
 use Godbout\Alfred\Workflow\Icon;
 use Godbout\Alfred\Workflow\Item;
-use Godbout\Alfred\Workflow\Mods\Fn;
+use Godbout\Alfred\Workflow\Mods\Fnn;
 use Godbout\Alfred\Workflow\Mods\Alt;
 use Godbout\Alfred\Workflow\Variable;
 use Godbout\Alfred\Workflow\Mods\Ctrl;
@@ -248,7 +248,7 @@ final class ScriptFilterTest extends TestCase
             ->mods(
                 Shift::create()
                     ->subtitle('shift subtitle'),
-                Fn::create()
+                Fnn::create()
                     ->arg('fn arg')
                     ->valid(true)
             );

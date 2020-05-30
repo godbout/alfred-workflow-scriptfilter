@@ -4,7 +4,7 @@ namespace Tests\Item;
 
 use PHPUnit\Framework\TestCase;
 use Godbout\Alfred\Workflow\Item;
-use Godbout\Alfred\Workflow\Mods\Fn;
+use Godbout\Alfred\Workflow\Mods\Fnn;
 use Godbout\Alfred\Workflow\Mods\Alt;
 use Godbout\Alfred\Workflow\Mods\Cmd;
 use Godbout\Alfred\Workflow\Mods\Ctrl;
@@ -80,7 +80,7 @@ final class ModsTest extends TestCase
         $this->item->mods(
             Shift::create()
                 ->arg('shift'),
-            Fn::create()
+            Fnn::create()
                 ->arg('fn'),
             Ctrl::create()
                 ->arg('ctrl'),

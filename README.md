@@ -87,7 +87,7 @@ $anotherItem = Item::create()
     ->mods(
         Shift::create()
             ->subtitle('shift subtitle'),
-        Fn::create()
+        Fnn::create()
             ->arg('fn arg')
             ->valid(true)
     );
