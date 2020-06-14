@@ -13,7 +13,7 @@ final class ModTest extends TestCase
     {
         parent::setUp();
 
-        $this->mod = new Ctrl;
+        $this->mod = new Ctrl();
     }
 
     /** @test */
