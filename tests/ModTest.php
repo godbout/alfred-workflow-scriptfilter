@@ -9,7 +9,7 @@ use Godbout\Alfred\Workflow\Mods\Ctrl;
 
 final class ModTest extends TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 

@@ -14,7 +14,7 @@ use Godbout\Alfred\Workflow\ScriptFilter;
 
 final class ScriptFilterTest extends TestCase
 {
-    public function tearDown()
+    public function tearDown(): void
     {
         parent::tearDown();
 

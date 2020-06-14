@@ -7,7 +7,7 @@ use Godbout\Alfred\Workflow\Item;
 
 final class OtherFieldsTest extends TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 

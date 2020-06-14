@@ -1,6 +1,6 @@
 {
     "name": "godbout/alfred-workflow-scriptfilter",
-    "description": "Makes it easy and fun to build Alfred 3 Workflows in PHP.",
+    "description": "Makes it easy and fun to build Alfred 3 or 4 Workflows in PHP.",
     "keywords": [
         "alfred",
         "workflow",
@@ -17,11 +17,11 @@
         }
     ],
     "require": {
-        "php": "^7.1"
+        "php": "^7.2"
     },
     "require-dev": {
-        "phpunit/phpunit": "^7.5",
-        "codedungeon/phpunit-result-printer": "^0.25.0"
+        "phpunit/phpunit": "^8.5",
+        "codedungeon/phpunit-result-printer": "^0.27"
     },
     "autoload": {
         "psr-4": {
