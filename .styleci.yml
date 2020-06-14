@@ -1,1 +1,3 @@
-preset: psr12
+php:
+  preset: recommended
+  risky: true
