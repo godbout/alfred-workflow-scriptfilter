@@ -7,7 +7,8 @@ use Godbout\Alfred\Workflow\Traits\HasVariables;
 
 abstract class Mod
 {
-    use HasIcon, HasVariables;
+    use HasIcon;
+    use HasVariables;
 
     const FIELDS_ALLOWED = [
         'valid',

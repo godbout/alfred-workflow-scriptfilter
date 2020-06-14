@@ -354,17 +354,17 @@ final class ScriptFilterTest extends TestCase
             'items' => [
                 ['title' => 'Olá'],
                 ['title' => 'Bonjour'],
-                ['title' => 'Hello']
-            ]
+                ['title' => 'Hello'],
+            ],
         ];
 
         $this->assertSame(json_encode($outputNotFiltered), ScriptFilter::output());
 
         $outputFiltered = [
-                'items' => [
-                    ['title' => 'Bonjour'],
-                ]
-            ];
+            'items' => [
+                ['title' => 'Bonjour'],
+            ],
+        ];
 
         ScriptFilter::filterItems('Bon');
 
@@ -383,8 +383,8 @@ final class ScriptFilterTest extends TestCase
 
         $output = [
             'items' => [
-                ['subtitle' => 'Select to see timer']
-            ]
+                ['subtitle' => 'Select to see timer'],
+            ],
         ];
 
         ScriptFilter::filterItems('see', 'subtitle');
@@ -403,8 +403,8 @@ final class ScriptFilterTest extends TestCase
 
         $output = [
             'items' => [
-                ['title' => 'Peugeot']
-            ]
+                ['title' => 'Peugeot'],
+            ],
         ];
 
         ScriptFilter::filterItems('peu');
@@ -425,8 +425,8 @@ final class ScriptFilterTest extends TestCase
             'items' => [
                 ['title' => 'bananas'],
                 ['title' => 'apricots'],
-                ['title' => 'tomatoes']
-            ]
+                ['title' => 'tomatoes'],
+            ],
         ];
 
         ScriptFilter::filterItems();
@@ -450,7 +450,7 @@ final class ScriptFilterTest extends TestCase
                 ['title' => 'Angola'],
                 ['title' => 'France'],
                 ['title' => 'Portugal'],
-            ]
+            ],
         ];
 
         ScriptFilter::sortItems();
@@ -472,7 +472,7 @@ final class ScriptFilterTest extends TestCase
                 ['title' => 'Portugal'],
                 ['title' => 'France'],
                 ['title' => 'Angola'],
-            ]
+            ],
         ];
 
         ScriptFilter::sortItems('desc');
@@ -493,16 +493,16 @@ final class ScriptFilterTest extends TestCase
             'items' => [
                 [
                     'title' => 'Veyron',
-                    'subtitle' => 'Bugatti'
+                    'subtitle' => 'Bugatti',
                 ],
                 [
                     'title' => '206',
-                    'subtitle' => 'Peugeot'
+                    'subtitle' => 'Peugeot',
                 ],
                 [
                     'title' => 'Megane',
-                    'subtitle' => 'Renault'
-                ]
+                    'subtitle' => 'Renault',
+                ],
             ],
         ];
 
@@ -524,15 +524,15 @@ final class ScriptFilterTest extends TestCase
             'items' => [
                 [
                     'title' => 'Megane',
-                    'subtitle' => 'Renault'
+                    'subtitle' => 'Renault',
                 ],
                 [
                     'title' => '206',
-                    'subtitle' => 'Peugeot'
+                    'subtitle' => 'Peugeot',
                 ],
                 [
                     'title' => 'Veyron',
-                    'subtitle' => 'Bugatti'
+                    'subtitle' => 'Bugatti',
                 ],
             ],
         ];
@@ -559,8 +559,8 @@ final class ScriptFilterTest extends TestCase
                 ['title' => 'glmb.today'],
                 ['title' => 'I Was Just Thinking'],
                 ['title' => 'Sleeplessmind Ltd.'],
-                ['title' => 'sleeplessmind.info']
-            ]
+                ['title' => 'sleeplessmind.info'],
+            ],
         ];
 
         ScriptFilter::sortItems();

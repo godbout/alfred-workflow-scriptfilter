@@ -150,7 +150,7 @@ final class ScriptFilterTest extends TestCase
             'items' => [
                 ['title' => 'first'],
                 ['title' => 'third'],
-            ]
+            ],
         ];
 
         $this->assertSame(json_encode($output), ScriptFilter::output());

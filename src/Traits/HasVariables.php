@@ -10,7 +10,7 @@ trait HasVariables
 
     public function variable(...$arguments)
     {
-        if (! $arguments[0] instanceof Variable) {
+        if (!$arguments[0] instanceof Variable) {
             $arguments[0] = Variable::create($arguments[0], $arguments[1]);
         }
 
