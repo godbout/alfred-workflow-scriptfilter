@@ -1,3 +1,2 @@
-php:
-  preset: recommended
-  risky: true
+preset: recommended
+risky: true
