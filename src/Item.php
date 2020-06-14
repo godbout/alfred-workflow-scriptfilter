@@ -14,7 +14,8 @@ use Godbout\Alfred\Workflow\Traits\HasVariables;
 
 class Item
 {
-    use HasIcon, HasVariables;
+    use HasIcon;
+    use HasVariables;
 
     const FIELDS_ALLOWED = [
         'variables',
@@ -55,7 +56,7 @@ class Item
 
     public static function create()
     {
-        return new self;
+        return new self();
     }
 
     public static function createDefault()
