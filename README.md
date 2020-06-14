@@ -29,7 +29,7 @@ composer require godbout/alfred-workflow-scriptfilter
 ## Usage
 
 The main `ScriptFilter` class is a singleton. You can create many
-instances of all the other classes: `Item`, `Variable`, `Icon`, and the `Mod` classes: `Ctrl`, `Fn`, `Shift`, `Alt`, and `Cmd`.
+instances of all the other classes: `Item`, `Variable`, `Icon`, and the `Mod` classes: `Ctrl`, `Fnn`, `Shift`, `Alt`, and `Cmd`.
 
 You may check the structure and options of the Alfred Script Filter JSON Format here: https://www.alfredapp.com/help/workflows/inputs/script-filter/json/
 
