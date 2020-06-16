@@ -1,9 +1,10 @@
 {
     "name": "godbout/alfred-workflow-scriptfilter",
-    "description": "Makes it easy and fun to build Alfred 3 or 4 Workflows in PHP.",
+    "description": "Generate Alfred 3 or 4 Workflow Results in PHP with a laugh.",
     "keywords": [
         "alfred",
         "workflow",
+        "results",
         "php"
     ],
     "homepage": "https://github.com/godbout/alfred-workflow-scriptfilter",
@@ -11,9 +12,9 @@
     "type": "library",
     "authors": [
         {
-            "name": "Guill Lo",
+            "name": "Guillaume Leclerc",
             "email": "guill@sleeplessmind.com.mo",
-            "role": "Developer"
+            "role": "Craftsman"
         }
     ],
     "require": {
