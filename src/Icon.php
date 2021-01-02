@@ -4,7 +4,7 @@ namespace Godbout\Alfred\Workflow;
 
 class Icon
 {
-    const TYPES_ALLOWED = [
+    private const TYPES_ALLOWED = [
         'fileicon',
         'filetype',
     ];

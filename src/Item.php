@@ -17,7 +17,7 @@ class Item
     use HasIcon;
     use HasVariables;
 
-    const FIELDS_ALLOWED = [
+    private const FIELDS_ALLOWED = [
         'variables',
         'uid',
         'title',
@@ -33,13 +33,13 @@ class Item
         'quicklookurl',
     ];
 
-    const TYPES_ALLOWED = [
+    private const TYPES_ALLOWED = [
         'default',
         'file',
         'file:skipcheck',
     ];
 
-    const MODS_ALLOWED = [
+    private const MODS_ALLOWED = [
         Shift::class,
         Fnn::class,
         Ctrl::class,
@@ -47,7 +47,7 @@ class Item
         Cmd::class,
     ];
 
-    const ICONTYPES_ALLOWED = [
+    private const ICONTYPES_ALLOWED = [
         'fileicon',
         'filetype',
     ];

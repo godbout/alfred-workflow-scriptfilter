@@ -10,7 +10,7 @@ abstract class Mod
     use HasIcon;
     use HasVariables;
 
-    const FIELDS_ALLOWED = [
+    private const FIELDS_ALLOWED = [
         'valid',
         'arg',
         'subtitle',

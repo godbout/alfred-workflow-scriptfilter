@@ -20,11 +20,13 @@
         }
     ],
     "require": {
-        "php": "^7.2"
+        "php": "^7.4 || ^8.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^8.5",
-        "codedungeon/phpunit-result-printer": "^0.27"
+        "codedungeon/phpunit-result-printer": "^0.30",
+        "phpunit/phpunit": "^9.5",
+        "scrutinizer/ocular": "^1.8",
+        "symfony/yaml": "^5.0"
     },
     "autoload": {
         "psr-4": {
