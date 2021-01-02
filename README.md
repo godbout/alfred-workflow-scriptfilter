@@ -2,7 +2,7 @@
 
 <p align="center">
     <a href="https://packagist.org/packages/godbout/alfred-workflow-scriptfilter"><img src="https://poser.pugx.org/godbout/alfred-workflow-scriptfilter/v/stable" alt="Latest Stable Version"></a>
-    <a href="https://travis-ci.com/godbout/alfred-workflow-scriptfilter"><img src="https://img.shields.io/travis/com/godbout/alfred-workflow-scriptfilter/master.svg" alt="Build Status"></a>
+    <a href="https://github.com/godbout/alfred-workflow-scriptfilter/actions"><img src="https://img.shields.io/github/workflow/status/godbout/alfred-workflow-scriptfilter/tests" alt="Build Status"></a>
     <a href="https://scrutinizer-ci.com/g/godbout/alfred-workflow-scriptfilter"><img src="https://img.shields.io/scrutinizer/g/godbout/alfred-workflow-scriptfilter.svg" alt="Quality Score"></a>
     <a href="https://scrutinizer-ci.com/g/godbout/alfred-workflow-scriptfilter"><img src="https://scrutinizer-ci.com/g/godbout/alfred-workflow-scriptfilter/badges/coverage.png?b=master" alt="Code Coverage"></a>
     <a href="https://packagist.org/packages/godbout/alfred-workflow-scriptfilter"><img src="https://poser.pugx.org/godbout/alfred-workflow-scriptfilter/downloads" alt="Total Downloads"></a>
@@ -24,8 +24,7 @@ Joe Tannenbaum's [package][2]. His API might be a little less heavier than mine.
 
 ```php
 composer require godbout/alfred-workflow-scriptfilter
-```
-
+``` 
 ## Usage
 
 The main `ScriptFilter` class is a singleton. You can create many
