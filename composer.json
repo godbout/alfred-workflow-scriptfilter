@@ -24,7 +24,7 @@
     },
     "require-dev": {
         "codedungeon/phpunit-result-printer": "^0.30",
-        "phpunit/phpunit": "^9.5",
+        "phpunit/phpunit": "^8.5",
         "scrutinizer/ocular": "^1.8"
     },
     "autoload": {
