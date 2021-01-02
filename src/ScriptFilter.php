@@ -88,10 +88,10 @@ class ScriptFilter
 
         usort($items, function ($a, $b) use ($direction, $field) {
             if ($direction !== 'asc') {
-                return strtolower($b->$field) > strtolower($a->$field);
+                return strtolower($b->$field) <=> strtolower($a->$field);
             }
 
-            return strtolower($a->$field) > strtolower($b->$field);
+            return strtolower($a->$field) <=> strtolower($b->$field);
         });
 
         return self::$instance;
