@@ -10,12 +10,12 @@ on:
 
 jobs:
   php:
-    runs-on: ${{ matrix.os }}
+    name: on macOS, PHP
+    runs-on: macos-latest
 
     strategy:
       matrix:
-        os: [macos-latest, ubuntu-latest]
-        php: [8.0, 7.4]
+        php: [8.0, 7.4, 7.3]
         dependency-version: [prefer-lowest, prefer-stable]
 
     steps:
