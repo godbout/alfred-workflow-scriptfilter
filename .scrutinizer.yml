@@ -10,4 +10,4 @@ filter:
 
 tools:
   external_code_coverage:
-    runs: 8
+    runs: 6
