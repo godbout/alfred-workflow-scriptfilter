@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "963ed447fde15bd3ef864497370c68a2",
+    "content-hash": "f22272b567dcef5d639f172739d3e81b",
     "packages": [],
     "packages-dev": [
         {
@@ -2056,16 +2056,16 @@
         },
         {
             "name": "scrutinizer/ocular",
-            "version": "1.8.1",
+            "version": "1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/scrutinizer-ci/ocular.git",
-                "reference": "801d176fbcee081f1f4f8c879a07a0ca5ff86eca"
+                "reference": "142a84a131d622e79a1d5b527f2c5a9f6812f2d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/scrutinizer-ci/ocular/zipball/801d176fbcee081f1f4f8c879a07a0ca5ff86eca",
-                "reference": "801d176fbcee081f1f4f8c879a07a0ca5ff86eca",
+                "url": "https://api.github.com/repos/scrutinizer-ci/ocular/zipball/142a84a131d622e79a1d5b527f2c5a9f6812f2d9",
+                "reference": "142a84a131d622e79a1d5b527f2c5a9f6812f2d9",
                 "shasum": ""
             },
             "require": {
@@ -2095,9 +2095,9 @@
             ],
             "support": {
                 "issues": "https://github.com/scrutinizer-ci/ocular/issues",
-                "source": "https://github.com/scrutinizer-ci/ocular/tree/1.8.1"
+                "source": "https://github.com/scrutinizer-ci/ocular/tree/1.8.0"
             },
-            "time": "2021-02-25T15:54:10+00:00"
+            "time": "2020-12-11T10:39:03+00:00"
         },
         {
             "name": "sebastian/cli-parser",
