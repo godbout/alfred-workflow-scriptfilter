@@ -2,15 +2,15 @@
 
 namespace Tests;
 
-use PHPUnit\Framework\TestCase;
 use Godbout\Alfred\Workflow\Icon;
 use Godbout\Alfred\Workflow\Item;
-use Godbout\Alfred\Workflow\Mods\Fnn;
 use Godbout\Alfred\Workflow\Mods\Alt;
-use Godbout\Alfred\Workflow\Variable;
 use Godbout\Alfred\Workflow\Mods\Ctrl;
+use Godbout\Alfred\Workflow\Mods\Fnn;
 use Godbout\Alfred\Workflow\Mods\Shift;
 use Godbout\Alfred\Workflow\ScriptFilter;
+use Godbout\Alfred\Workflow\Variable;
+use PHPUnit\Framework\TestCase;
 
 final class ScriptFilterTest extends TestCase
 {

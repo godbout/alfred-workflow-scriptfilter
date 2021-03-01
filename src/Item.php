@@ -2,15 +2,15 @@
 
 namespace Godbout\Alfred\Workflow;
 
-use ReflectionClass;
 use Godbout\Alfred\Workflow\Mods\Alt;
 use Godbout\Alfred\Workflow\Mods\Cmd;
+use Godbout\Alfred\Workflow\Mods\Ctrl;
 use Godbout\Alfred\Workflow\Mods\Fnn;
 use Godbout\Alfred\Workflow\Mods\Mod;
-use Godbout\Alfred\Workflow\Mods\Ctrl;
 use Godbout\Alfred\Workflow\Mods\Shift;
 use Godbout\Alfred\Workflow\Traits\HasIcon;
 use Godbout\Alfred\Workflow\Traits\HasVariables;
+use ReflectionClass;
 
 class Item
 {

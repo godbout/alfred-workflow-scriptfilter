@@ -2,9 +2,9 @@
 
 namespace Tests\Item;
 
-use PHPUnit\Framework\TestCase;
 use Godbout\Alfred\Workflow\Item;
 use Godbout\Alfred\Workflow\Variable;
+use PHPUnit\Framework\TestCase;
 
 final class VariableTest extends TestCase
 {

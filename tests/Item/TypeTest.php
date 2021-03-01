@@ -2,8 +2,8 @@
 
 namespace Tests\Item;
 
-use PHPUnit\Framework\TestCase;
 use Godbout\Alfred\Workflow\Item;
+use PHPUnit\Framework\TestCase;
 
 final class TypeTest extends TestCase
 {
